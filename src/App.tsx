@@ -1,27 +1,33 @@
-// App.tsx
-import Cookies from "js-cookie";
-import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import ProtectedLayout from "./layouts/ProtectedLayout";
+import PublicLayout from "./layouts/PublicLayout";
 import Dashboard from "./pages/Dashboard";
 import LoginPage from "./pages/LoginPage";
+import Delegates from "./pages/delegates/Delegates";
+import Events from "./pages/events/Events";
+import Speakers from "./pages/speakers/Speakers";
+import Sponsors from "./pages/sponsors/Sponsors";
+import Users from "./pages/users/Users";
 
-const App: React.FC = () => {
-  // helper to check if the auth cookie exists
-  const isAuthenticated = () => !!Cookies.get("token");
-
+const App = () => {
   return (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
+    <PublicLayout>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
 
-      <Route
-        path="/dashboard"
-        element={
-          isAuthenticated() ? <Dashboard /> : <Navigate to="/login" replace />
-        }
-      />
+        {/* all protected pages go here */}
+        <Route element={<ProtectedLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/speakers" element={<Speakers />} />
+          <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/delegates" element={<Delegates />} />
+          <Route path="/users" element={<Users />} />
+        </Route>
 
-      <Route path="*" element={<Navigate to="/login" replace />} />
-    </Routes>
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </PublicLayout>
   );
 };
 

@@ -1,6 +1,4 @@
-import React from "react";
-
-const DashboardCompnent: React.FC = () => (
+const DashboardCompnent = () => (
   <div className="space-y-6">
     {/* Stats Cards */}
     <div className="grid grid-cols-4 gap-4">
