@@ -1,1 +1,2 @@
+export { default as AdminUserForm } from "./AdminUserForm";
 export { default as LoginForm } from "./LoginForm";

@@ -1,12 +1,8 @@
-import type { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
-interface PublicLayoutProps {
-  children: ReactNode;
-}
-
-const PublicLayout = ({ children }: PublicLayoutProps) => {
+const PublicLayout = () => {
   return (
     <div style={{ display: "flex", minHeight: "100vh" }}>
       {/* Sidebar */}
@@ -36,7 +32,7 @@ const PublicLayout = ({ children }: PublicLayoutProps) => {
             overflow: "auto",
           }}
         >
-          {children}
+          <Outlet /> {/* 👈 This is where nested routes render */}
         </main>
       </div>
     </div>

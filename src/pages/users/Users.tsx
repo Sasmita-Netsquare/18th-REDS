@@ -1,4 +1,7 @@
 // src/components/UserTable.tsx
+import { useState } from "react";
+import { IoIosAdd } from "react-icons/io";
+import { AdminUserForm, Drawer } from "../../components";
 import type { EventUser } from "../types/EventUser";
 
 export const dummyUsers: EventUser[] = [
@@ -60,8 +63,26 @@ export const dummyUsers: EventUser[] = [
   },
 ];
 export default function Users() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const openDrawer = () => setIsDrawerOpen(true);
+  const closeDrawer = () => setIsDrawerOpen(false);
   return (
     <div className="w-full overflow-x-auto">
+      <div className="flex justify-end items-end w-full">
+        <button
+          onClick={openDrawer}
+          className="flex justify-center items-center bg-blue-700 rounded-md text-white py-2 px-4 uppercase text-sm"
+        >
+          <IoIosAdd className="text-xl" />
+          Add User
+        </button>
+        {isDrawerOpen && (
+          <Drawer onClose={closeDrawer} isOpen={isDrawerOpen}>
+            <AdminUserForm />
+          </Drawer>
+        )}
+      </div>
       <table className="min-w-full table-auto md:table-fixed border-separate border-spacing-y-2">
         <thead className="bg-purple-200 rounded-2xl">
           <tr>

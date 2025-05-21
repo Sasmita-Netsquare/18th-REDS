@@ -11,11 +11,11 @@ import Users from "./pages/users/Users";
 
 const App = () => {
   return (
-    <PublicLayout>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
 
-        {/* all protected pages go here */}
+      {/* Protected routes go here inside PublicLayout and ProtectedLayout */}
+      <Route element={<PublicLayout />}>
         <Route element={<ProtectedLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/events" element={<Events />} />
@@ -24,10 +24,10 @@ const App = () => {
           <Route path="/delegates" element={<Delegates />} />
           <Route path="/users" element={<Users />} />
         </Route>
+      </Route>
 
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
-    </PublicLayout>
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
   );
 };
 
