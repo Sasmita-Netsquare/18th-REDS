@@ -17,7 +17,7 @@ const initialState: AuthState = {
 };
 
 export const registerUser = createAsyncThunk(
-  "auth/register-admin",
+  "auth/admin/register",
   async (data: authService.RegisterData, thunkAPI) => {
     try {
       return await authService.register(data);
@@ -28,7 +28,7 @@ export const registerUser = createAsyncThunk(
 );
 
 export const loginUser = createAsyncThunk(
-  "auth/login-admin",
+  "auth/admin/login",
   async (data: authService.LoginData, thunkAPI) => {
     try {
       return await authService.login(data);
@@ -39,7 +39,7 @@ export const loginUser = createAsyncThunk(
 );
 
 export const logoutUser = createAsyncThunk(
-  "auth/logout-admin",
+  "auth/admin/logout",
   async (_, thunkAPI) => {
     try {
       await authService.logout();
