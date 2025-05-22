@@ -1,7 +1,8 @@
 // src/components/UserTable.tsx
 import { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
-import { AdminUserForm, Drawer } from "../../components";
+import { AdminUserForm } from "../../components";
+import Dialog from "../../components/common/Dialog";
 import type { EventUser } from "../types/EventUser";
 
 export const dummyUsers: EventUser[] = [
@@ -63,24 +64,24 @@ export const dummyUsers: EventUser[] = [
   },
 ];
 export default function Users() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const openDrawer = () => setIsDrawerOpen(true);
-  const closeDrawer = () => setIsDrawerOpen(false);
+  const openDialog = () => setIsDialogOpen(true);
+  const closeDialog = () => setIsDialogOpen(false);
   return (
     <div className="w-full overflow-x-auto">
       <div className="flex justify-end items-end w-full">
         <button
-          onClick={openDrawer}
+          onClick={openDialog}
           className="flex justify-center items-center bg-blue-700 rounded-md text-white py-2 px-4 uppercase text-sm"
         >
           <IoIosAdd className="text-xl" />
           Add User
         </button>
-        {isDrawerOpen && (
-          <Drawer onClose={closeDrawer} isOpen={isDrawerOpen}>
+        {isDialogOpen && (
+          <Dialog onClose={closeDialog} isOpen={isDialogOpen}>
             <AdminUserForm />
-          </Drawer>
+          </Dialog>
         )}
       </div>
       <table className="min-w-full table-auto md:table-fixed border-separate border-spacing-y-2">

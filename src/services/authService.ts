@@ -11,9 +11,10 @@ export interface LoginData {
 }
 
 export const register = (data: RegisterData) =>
-  api.post("/auth/register", data).then((res) => res.data);
+  api.post("/auth/register-admin", data).then((res) => res.data);
 
 export const login = (data: LoginData) =>
-  api.post("/auth/login", data).then((res) => res.data);
+  api.post("/auth/login-admin", data).then((res) => res.data);
 
-export const logout = () => api.post("/auth/logout").then((res) => res.data);
+export const logout = () =>
+  api.post("/auth/logout-admin").then((res) => res.data);

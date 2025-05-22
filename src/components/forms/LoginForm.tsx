@@ -26,9 +26,8 @@ const LoginForm = () => {
         ...values,
       });
 
-      console.log(res);
-      if (res?.meta?.requestStatus === "fulfilled")
-        return navigate("/dashboard");
+      // console.log(res);
+      if (res?.payload?.success === true) return navigate("/dashboard");
     } catch (error: unknown) {
       // errorHelper(error);
     }
