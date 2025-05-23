@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
-// import axiosInstance from "../services/authService";
+import axiosInstance from "./service";
 
 export const setToken = (token: string): void => {
-  Cookies.set("cat", token);
+  Cookies.set("accessToken", token);
 };
 
 export const getToken = (): string | undefined => {
-  return Cookies.get("cat");
+  return Cookies.get("accessToken");
 };
 
 export const isTokenValid = (buffer: number = 0): boolean => {
@@ -36,90 +36,90 @@ export const getTimeUntilExpiry = (): number | null => {
     return null;
   }
 };
-// let refreshTimerID: number | null = null;
+let refreshTimerID: number | null = null;
 
-// export const setupTokenRefresh = () => {
-//   if (refreshTimerID) {
-//     window.clearInterval(refreshTimerID);
-//     refreshTimerID = null;
-//   }
+export const setupTokenRefresh = () => {
+  if (refreshTimerID) {
+    window.clearInterval(refreshTimerID);
+    refreshTimerID = null;
+  }
 
-//   const checkAndRefreshToken = async () => {
-//     const token = getToken();
-//     if (!token) {
-//       console.warn("No token found. Skipping token refresh.");
-//       return;
-//     }
+  const checkAndRefreshToken = async () => {
+    const token = getToken();
+    if (!token) {
+      console.warn("No token found. Skipping token refresh.");
+      return;
+    }
 
-//     if (!isTokenValid(120)) {
-//       console.log("Token is about to expire. Refreshing...");
-//       try {
-//         const response = await axiosInstance.post(
-//           "/auth/refresh-token",
-//           {},
-//           {
-//             headers: {
-//               "Content-Type": "application/json",
-//             },
-//             withCredentials: true,
-//           }
-//         );
+    if (!isTokenValid(120)) {
+      console.log("Token is about to expire. Refreshing...");
+      try {
+        const response = await axiosInstance.post(
+          "/auth/refresh-token",
+          {},
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          }
+        );
 
-//         console.log("Token refresh response:", response);
+        console.log("Token refresh response:", response);
 
-//         if (response.data?.resultObj?.authToken) {
-//           setToken(response.data.resultObj.authToken);
-//           console.log("Token refreshed successfully");
-//         } else {
-//           console.error("No auth token received in refresh response");
-//         }
-//       } catch (error) {
-//         console.error("Failed to refresh token:", error);
+        if (response.data?.resultObj?.authToken) {
+          setToken(response.data.resultObj.authToken);
+          console.log("Token refreshed successfully");
+        } else {
+          console.error("No auth token received in refresh response");
+        }
+      } catch (error) {
+        console.error("Failed to refresh token:", error);
 
-//         if (refreshTimerID) {
-//           window.clearInterval(refreshTimerID);
-//           refreshTimerID = null;
-//         }
-//         logout();
-//       }
-//     }
-//   };
+        if (refreshTimerID) {
+          window.clearInterval(refreshTimerID);
+          refreshTimerID = null;
+        }
+        logout();
+      }
+    }
+  };
 
-//   checkAndRefreshToken();
-//   refreshTimerID = window.setInterval(checkAndRefreshToken, 10000);
-//   return () => {
-//     if (refreshTimerID) {
-//       window.clearInterval(refreshTimerID);
-//       refreshTimerID = null;
-//     }
-//   };
-// };
+  checkAndRefreshToken();
+  refreshTimerID = window.setInterval(checkAndRefreshToken, 10000);
+  return () => {
+    if (refreshTimerID) {
+      window.clearInterval(refreshTimerID);
+      refreshTimerID = null;
+    }
+  };
+};
 
-// export const logout = async (): Promise<void> => {
-//   try {
-//     await axiosInstance.post(
-//       "/auth/user-logout",
-//       {},
-//       {
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         withCredentials: true,
-//       }
-//     );
-//     Cookies.remove("cat");
-//   } catch (err) {
-//     console.error("Error during logout:", err);
-//   }
-// };
+export const logout = async (): Promise<void> => {
+  try {
+    await axiosInstance.post(
+      "/auth/admin/logout",
+      {},
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+    Cookies.remove("accessToken");
+  } catch (err) {
+    console.error("Error during logout:", err);
+  }
+};
 
 export const authUtils = {
   setToken,
   getToken,
   isTokenValid,
   getTimeUntilExpiry,
-  //   setupTokenRefresh,
-  //   logout,
+  setupTokenRefresh,
+  logout,
 };
 
 export default authUtils;

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-useless-escape */
 import {
@@ -8,8 +9,9 @@ import {
   type FormikHelpers,
   useFormikContext,
 } from "formik";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as Yup from "yup";
+import { useAuth } from "../../features/hooks/useAuth";
 
 interface AdminUserFormValues {
   email: string;
@@ -61,18 +63,35 @@ const FormObserver = () => {
   return null;
 };
 
-const AdminUserForm = () => {
-  const handleSubmit = (
-    values: AdminUserFormValues,
-    actions: FormikHelpers<AdminUserFormValues>
-  ) => {
-    console.log("Form Submitted:", values);
+const AdminUserForm = ({
+  setIsDialogOpen,
+}: {
+  setIsDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  const { register } = useAuth();
 
-    setTimeout(() => {
-      actions.setSubmitting(false);
-      actions.resetForm();
-      // alert("User added successfully!");
-    }, 1500);
+  const [events, setEvents] = useState([
+    { id: 1, name: "AWS" },
+    { id: 2, name: "AWS-Inspired" },
+    { id: 3, name: "Security & Networking" },
+    { id: 4, name: "Cybersecurity" },
+  ]);
+
+  const handleSubmit = async (values: any, actions: FormikHelpers<any>) => {
+    try {
+      setIsDialogOpen(false); // Wait for API call to complete
+      await register(values);
+      console.log("Form Submitted:", values);
+
+      // Close the dialog
+
+      actions.resetForm(); // Optional: Reset immediately
+    } catch (error) {
+      // console.error("Error submitting form:", error);
+      // You can show an error message here if needed
+    } finally {
+      actions.setSubmitting(false); // Stop submitting state
+    }
   };
 
   return (
@@ -187,9 +206,9 @@ const AdminUserForm = () => {
                   <option value="" disabled>
                     Select Event
                   </option>
-                  <option value="cloud">Cloud & DevOps</option>
-                  <option value="aws">AWS-Inspired</option>
-                  <option value="security">Security & Networking</option>
+                  {events.map((event) => (
+                    <option value={event.id}>{event.name}</option>
+                  ))}
                 </Field>
                 <ErrorMessage
                   name="event"
@@ -219,7 +238,7 @@ const AdminUserForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-blue-600 text-white py-2 px-4 rounded uppercase text-xs font-semibold"
+                  className="bg-blue-600 text-white py-2 px-4 rounded uppercase text-xs font-semibold cursor-pointer"
                 >
                   {isSubmitting ? "Saving..." : "Save User"}
                 </button>

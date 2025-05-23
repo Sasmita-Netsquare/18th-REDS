@@ -18,16 +18,16 @@ const LoginSchema = Yup.object().shape({
 });
 
 const LoginForm = () => {
-  const { login } = useAuth();
+  const { userLogin } = useAuth();
   const navigate = useNavigate();
   const handleSubmit = async (values: any) => {
     try {
-      const res = await login({
+      const res = await userLogin({
         ...values,
       });
 
       // console.log(res);
-      if (res?.payload?.success === true) return navigate("/dashboard");
+      if (res?.success === true) return navigate("/dashboard");
     } catch (error: unknown) {
       // errorHelper(error);
     }

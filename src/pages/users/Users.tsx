@@ -1,5 +1,6 @@
 // src/components/UserTable.tsx
 import { useState } from "react";
+
 import { IoIosAdd } from "react-icons/io";
 import { AdminUserForm } from "../../components";
 import Dialog from "../../components/common/Dialog";
@@ -80,7 +81,7 @@ export default function Users() {
         </button>
         {isDialogOpen && (
           <Dialog onClose={closeDialog} isOpen={isDialogOpen}>
-            <AdminUserForm />
+            <AdminUserForm setIsDialogOpen={setIsDialogOpen} />
           </Dialog>
         )}
       </div>

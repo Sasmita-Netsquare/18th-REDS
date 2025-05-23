@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from "./useRedux";
 
 export const useCounter = () => {
   const count = useAppSelector((state) => state.counter.value);
+
   const dispatch = useAppDispatch();
 
   const handleIncrement = () => dispatch(increment());

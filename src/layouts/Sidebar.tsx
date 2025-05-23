@@ -55,7 +55,8 @@ const menuItems: MenuItem[] = [
 const Sidebar = () => {
   return (
     <aside className="w-64 bg-white border-r flex flex-col">
-      <div className="p-4 text-2xl font-bold">EVENT</div>
+      {/* <div className="p-4 text-2xl font-bold">EVENT</div> */}
+      <img src="/main-logo.png" alt="logo" className="h-10 w-auto" />
       <nav className="flex-1 px-2 space-y-1">
         {menuItems.map(({ href, label, Icon, iconColorClass }) => (
           <a
