@@ -56,7 +56,9 @@ const Sidebar = () => {
   return (
     <aside className="w-64 bg-white border-r flex flex-col">
       {/* <div className="p-4 text-2xl font-bold">EVENT</div> */}
-      <img src="/main-logo.png" alt="logo" className="h-10 w-auto" />
+      <div className="flex items-center p-4 py-7">
+        <img src="/main_logo.png" alt="logo" className="h-auto w-40" />
+      </div>
       <nav className="flex-1 px-2 space-y-1">
         {menuItems.map(({ href, label, Icon, iconColorClass }) => (
           <a
