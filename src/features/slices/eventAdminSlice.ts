@@ -58,17 +58,17 @@ export const fetchEventAdmins = createAsyncThunk(
 //   }
 // );
 
-// export const createCategory = createAsyncThunk(
-//   "category/create",
-//   async (data: CategoryPayload, thunkAPI) => {
-//     try {
-//       const res = await categoryService.createCategory(data);
-//       return res;
-//     } catch (error: any) {
-//       return thunkAPI.rejectWithValue(handleError(error));
-//     }
-//   }
-// );
+export const createEventAdmin = createAsyncThunk(
+  "event-admin/create",
+  async (data: CategoryPayload, thunkAPI) => {
+    try {
+      const res = await eventAdminService.createEventAdmin(data);
+      return res;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(handleError(error));
+    }
+  }
+);
 
 // export const updateCategory = createAsyncThunk(
 //   "category/update",
