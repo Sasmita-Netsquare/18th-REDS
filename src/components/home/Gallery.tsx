@@ -11,27 +11,53 @@ const Gallery = () => {
       <div className="grid md:grid-cols-3 gap-1">
         {/* Column 1 */}
         <div className="flex flex-col gap-2 ">
-          <div className="bg-gray-300 h-[19rem] w-auto" />
-          <div className="bg-gray-300 h-[19rem] w-auto" />
-          <div className="bg-gray-300 h-[19rem] w-auto" />
-          <div className="bg-gray-300 h-[19rem] w-auto" />
-          <div className="bg-gray-300 h-[19rem] w-auto" />
+          <div className="h-[19rem] w-auto">
+            <img src="/image_1.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[19rem] w-auto">
+            <img src="/image_2.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[19rem] w-auto">
+            <img src="/image_1.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[19rem] w-auto">
+            <img src="/image_2.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[19rem] w-auto">
+            <img src="/image_1.png" alt="image" className="h-full w-auto" />
+          </div>
         </div>
 
         {/* Column 2 */}
         <div className="flex flex-col gap-2">
-          <div className="bg-gray-300 h-[26rem] w-auto" />
-          <div className="bg-gray-300 h-[26rem] w-auto" />
-          <div className="bg-gray-300 h-[26rem] w-auto" />
-          <div className="bg-gray-300 h-[26rem] w-auto" />
+          <div className="h-[26rem] w-auto">
+            <img src="/image_2.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[26rem] w-auto">
+            <img src="/image_1.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[26rem] w-auto">
+            <img src="/image_2.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[26rem] w-auto">
+            <img src="/image_1.png" alt="image" className="h-full w-auto" />
+          </div>
         </div>
 
         {/* Column 3 */}
         <div className="flex flex-col gap-2">
-          <div className="bg-gray-300 h-[24rem] w-auto" />
-          <div className="bg-gray-300 h-[24rem] w-auto" />
-          <div className="bg-gray-300 h-[24rem] w-auto" />
-          <div className="bg-gray-300 h-[24rem] w-auto" />
+          <div className="h-[24rem] w-auto">
+            <img src="/image_1.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[24rem] w-auto">
+            <img src="/image_2.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[24rem] w-auto">
+            <img src="/image_1.png" alt="image" className="h-full w-auto" />
+          </div>
+          <div className="h-[24rem] w-auto">
+            <img src="/image_2.png" alt="image" className="h-full w-auto" />
+          </div>
         </div>
       </div>
     </div>
