@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "react-scripts build",
-    "vercel-build": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
