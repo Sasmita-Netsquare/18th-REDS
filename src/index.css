@@ -26,6 +26,14 @@ body {
   .main-container {
     @apply container mx-auto px-2 md:px-4 lg:px-5 2xl:px-6;
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   /* .main-gap {
     @apply gap-4 md:gap-5 lg:gap-6;
   }
