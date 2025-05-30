@@ -34,17 +34,23 @@ const EventAbout = () => {
   }, []);
   return (
     <div className="main-container flex items-center justify-center py-16">
-      <div className="flex lg:flex-row flex-col justify-center items-end gap-8 w-full">
+      <div className="flex lg:flex-row flex-col justify-center items-center gap-8 w-full">
         {/* Left Section */}
         <div className="w-full">
           <p className="text-5xl">About our</p>
           <p className="text-yellow-600 text-7xl">Event</p>
-          <div className="bg-gray-300 w-full h-80 mt-6" />
+          <div className="mt-6">
+            <img
+              src="/image_1.png"
+              alt="image"
+              className="w-full h-auto rounded-md"
+            />
+          </div>
         </div>
 
         {/* Right Section */}
         <div
-          className="flex flex-col gap-5 justify-end items-end w-full"
+          className="flex flex-col gap-5 justify-start items-start w-full"
           ref={containerRef}
         >
           <p>
