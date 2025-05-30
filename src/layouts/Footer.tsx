@@ -10,11 +10,11 @@ const Footer = () => {
           partnerships. Connect with us to explore the opportunities awaiting
           you.
         </p>
-        <div className="flex items-center justify-end w-full">
+        <div className="flex items-center md:justify-end justify-center w-full">
           <img
             src="/gbb_logo.png"
             alt="GBB Logo"
-            className="lg:w-[20%] md:w-[50%] h-auto"
+            className="lg:w-[20%] md:w-[50%] w-44 h-auto"
           />
         </div>
       </div>
