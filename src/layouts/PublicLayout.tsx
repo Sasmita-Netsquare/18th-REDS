@@ -1,40 +1,57 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
 import Header from "./Header";
-import Sidebar from "./Sidebar";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PublicLayout = () => {
+  const headerInnerRef = useRef(null);
+
+  useEffect(() => {
+    gsap.set(headerInnerRef.current, {
+      width: "70%",
+      borderBottom: "none",
+    });
+
+    gsap.to(headerInnerRef.current, {
+      width: "100%",
+      borderBottom: "1px solid #e5e7eb",
+      duration: 0.4,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "bottom top", // When bottom of hero hits top of viewport
+        toggleActions: "play none none reverse",
+        scrub: false,
+      },
+    });
+  }, []);
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
-      {/* Sidebar */}
-      <aside
-        style={{
-          width: "240px",
-          backgroundColor: "#fff",
-          borderRight: "1px solid #e5e7eb",
-        }}
-      >
-        <Sidebar />
-      </aside>
+    <div className="flex flex-col">
+      {/* Header */}
 
-      {/* Main area */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-        {/* Header */}
-        <header style={{ borderBottom: "1px solid #e5e7eb" }}>
-          <Header />
-        </header>
-
-        {/* Page content */}
-        <main
-          style={{
-            flex: 1,
-            padding: "1.5rem",
-            backgroundColor: "#f9fafb",
-            overflow: "auto",
-          }}
+      <header className="bg-black text-white flex justify-center items-center fixed top-0 w-full z-50">
+        <div
+          ref={headerInnerRef}
+          className="transition-all duration-1000 ease-in-out"
+          style={{ borderBottom: "none" }}
         >
-          <Outlet /> {/* 👈 This is where nested routes render */}
-        </main>
-      </div>
+          <Header />
+        </div>
+      </header>
+
+      {/* Main content */}
+      <main className="flex-1 bg-black  overflow-y-auto">
+        <Outlet />
+      </main>
+
+      {/* Footer */}
+      <footer className=" bg-black text-white p-4 ">
+        <Footer />
+      </footer>
     </div>
   );
 };
