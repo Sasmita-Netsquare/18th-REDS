@@ -48,7 +48,7 @@ export default function HeroSection() {
     <>
       <div className="main-container py-10" id="hero">
         <div className="text-center">
-          <h1 className="text-8xl flex justify-center space-x-6 mt-40">
+          <h1 className="lg:text-8xl text-5xl flex justify-center space-x-6 lg:mt-40 mt-30">
             <span ref={leftRef}>Africa</span>
             <span ref={rightRef}>Risen</span>
           </h1>

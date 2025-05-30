@@ -39,8 +39,8 @@ body {
   }
   .heading-style {
     @apply font-semibold text-3xl tracking-wider;
-  }
+  }*/
   .delay-animation {
     @apply !transition-all !ease-in-out !duration-500;
-  } */
+  }
 }
