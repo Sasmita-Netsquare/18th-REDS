@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { useHeadingGroupAnimation } from "../hooks";
+
 interface FeatureItem {
   title: string;
   image: string;
@@ -38,10 +41,13 @@ const features: FeatureItem[] = [
 ];
 
 const EventFeatures = () => {
+  const headRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.1);
+
   return (
     <div className="main-container text-white py-12 ">
       <div className=" mx-auto flex flex-col gap-6">
-        <div className="w-full">
+        <div className="w-full" ref={headRef}>
           <p className="text-5xl">Event</p>
           <p className="text-yellow-600 text-7xl">Features</p>
         </div>
