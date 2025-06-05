@@ -5,17 +5,19 @@
   height: 0.25em;
 }
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: #efe7e7;
   border-radius: 10em;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #000000;
 }
 html,
 body {
   height: 100%;
   margin: 0;
-  background: #000000; /* Fixed background color */
+  @apply bg-cover bg-center bg-no-repeat min-h-screen;
+  background-attachment: fixed;
+  background-image: url("./backgroundImage.png");
   font-family: "Suisse Int'l", sans-serif;
   color: #ffffff; /* Optional: make text white to contrast with black bg */
 }
@@ -31,13 +33,6 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
-  /* .main-gap {
-    @apply gap-4 md:gap-5 lg:gap-6;
-  }
-  .heading-style {
-    @apply font-semibold text-3xl tracking-wider;
-  }*/
   .delay-animation {
     @apply !transition-all !ease-in-out !duration-500;
   }

@@ -44,12 +44,12 @@ const PublicLayout = () => {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 bg-black  overflow-y-auto">
+      <main className="flex-1  overflow-y-auto">
         <Outlet />
       </main>
 
       {/* Footer */}
-      <footer className=" bg-black text-white p-4 ">
+      <footer className=" text-white p-4 ">
         <Footer />
       </footer>
     </div>
