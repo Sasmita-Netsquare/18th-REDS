@@ -1,11 +1,14 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { useHeadingGroupAnimation } from "../hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const EventAbout = () => {
   const containerRef = useRef(null);
+  const headRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.1);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -36,7 +39,7 @@ const EventAbout = () => {
     <div className="main-container flex items-center justify-center py-16">
       <div className="flex lg:flex-row flex-col justify-center items-center gap-8 w-full">
         {/* Left Section */}
-        <div className="w-full">
+        <div className="w-full" ref={headRef}>
           <p className="text-5xl">About our</p>
           <p className="text-yellow-600 text-7xl">Event</p>
           <div className="mt-6">
