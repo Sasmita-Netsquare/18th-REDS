@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useHeadingGroupAnimation } from "../hooks";
 
 const testimonials = [
   {
@@ -21,6 +22,8 @@ const testimonials = [
 
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
+  const headRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.1);
 
   const handlePrev = () => {
     setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -33,7 +36,7 @@ const Testimonials = () => {
   return (
     <>
       <section className="main-container pt-16">
-        <div className="w-full">
+        <div className="w-full" ref={headRef}>
           <p className="text-5xl">Client</p>
           <p className="text-yellow-600 text-7xl">Testimonials</p>
         </div>
