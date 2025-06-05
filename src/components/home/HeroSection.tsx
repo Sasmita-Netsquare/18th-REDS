@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { useHeadingGroupAnimation } from "../hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -8,6 +10,13 @@ export default function HeroSection() {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const infoRef = useRef(null);
+  const headRef = useRef(null);
+
+  useHeadingGroupAnimation(headRef, 1);
+  // Delay the animation for infoRef
+  setTimeout(() => {
+    useHeadingGroupAnimation(infoRef, 1);
+  }, 2000);
 
   useEffect(() => {
     // Animate the title words on scroll
@@ -33,21 +42,12 @@ export default function HeroSection() {
       },
       0 // same time as previous
     );
-
-    // Animate the info section on load
-    if (infoRef.current) {
-      gsap.fromTo(
-        infoRef.current,
-        { y: 80, opacity: 0 },
-        { y: 0, opacity: 1, duration: 2, delay: 0.3, ease: "power2.out" }
-      );
-    }
   }, []);
 
   return (
     <>
       <div className="main-container py-10" id="hero">
-        <div className="text-center">
+        <div className="text-center" ref={headRef}>
           <h1 className="lg:text-8xl text-5xl flex justify-center space-x-6 lg:mt-40 mt-30">
             <span ref={leftRef}>Africa</span>
             <span ref={rightRef}>Risen</span>
