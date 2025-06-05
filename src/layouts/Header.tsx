@@ -45,7 +45,10 @@ const Header = () => {
           </a>
           <a
             href="#"
-            className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-semibold py-2 px-4 rounded"
+            className=" text-black font-[568px] py-2 px-4"
+            style={{
+              background: "linear-gradient(96.18deg, #F0AF12 0%, #B2680A 100%)",
+            }}
           >
             Register Now
           </a>
