@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
+import { useHeadingGroupAnimation } from "../hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +28,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
       scrollTrigger: {
         trigger: numberRef.current,
         start: "top 80%",
-        toggleActions: "play none none none",
+        toggleActions: "restart none none none",
       },
       onUpdate: () => {
         if (numberRef.current) {
@@ -50,11 +51,14 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
 };
 
 const EventNumbers: React.FC = () => {
+  const headRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.1);
+
   return (
     <div className="main-container flex items-center justify-center py-16">
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 w-full ">
         {/* Left Section */}
-        <div className="w-full">
+        <div className="w-full" ref={headRef}>
           <p className="text-5xl">Event by</p>
           <p className="text-yellow-600 text-7xl">Numbers</p>
         </div>
