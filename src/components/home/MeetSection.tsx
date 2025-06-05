@@ -1,5 +1,6 @@
 // components/MeetGrid.tsx
-
+import { useRef } from "react";
+import { useHeadingGroupAnimation } from "../hooks";
 const MeetGrid = () => {
   const people = [
     "Architects",
@@ -11,11 +12,13 @@ const MeetGrid = () => {
     "Global Solution Providers",
     "Media / Associations",
   ];
+  const headRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.1);
 
   return (
     <div className="main-container flex items-center justify-center py-16">
       <div className=" w-full flex flex-col gap-7">
-        <div className="w-full">
+        <div className="w-full" ref={headRef}>
           <p className="text-5xl">Who you will</p>
           <p className="text-yellow-600 text-7xl">Meet</p>
         </div>
@@ -24,7 +27,7 @@ const MeetGrid = () => {
           {people.map((person, index) => (
             <div
               key={index}
-              className="bg-[#111] border-2 border-[#1c1c1e] text-white text-center px-4 text-lg font-medium hover:bg-neutral-800 transition-colors duration-200 py-20"
+              className="bg-[#111] border-2 border-[#1c1c1e] text-white text-center px-4 text-lg font-medium py-20 hover:bg-white hover:text-black transition-all duration-800 ease-in-out"
             >
               {person}
             </div>
