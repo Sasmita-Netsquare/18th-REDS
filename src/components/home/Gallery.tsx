@@ -1,12 +1,17 @@
 import { useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
+import { useInView } from "../hooks/useInView";
 
 const Gallery = () => {
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
 
+  const { ref, isInView } = useInView({
+    threshold: 0.1,
+  });
+
   return (
-    <div className="main-container py-16">
+    <div className="main-container py-16" ref={ref}>
       {/* Header */}
       <div className="w-full pb-5" ref={headRef}>
         <p className="text-5xl">Photos</p>
@@ -14,109 +19,30 @@ const Gallery = () => {
       </div>
 
       {/* Gallery Grid */}
-      <div className="grid md:grid-cols-3 gap-1">
-        {/* Column 1 */}
-        <div className="flex flex-col gap-2 ">
-          <div className="h-[19rem] w-auto overflow-hidden">
-            <img
-              src="/image_1.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
+      <div ref={ref} className="grid md:grid-cols-3 gap-1">
+        {/* Columns */}
+        {[...Array(3)].map((_, colIdx) => (
+          <div key={colIdx} className="flex flex-col gap-2">
+            {[...Array(4)].map((_, rowIdx) => {
+              const imageIndex = (colIdx + rowIdx) % 2 === 0 ? 1 : 2;
+              const src = `/image_${imageIndex}.png`;
+              return (
+                <div key={rowIdx} className="h-[24rem] w-auto overflow-hidden">
+                  <img
+                    src={src}
+                    alt={`image ${imageIndex}`}
+                    style={{
+                      animationDelay: `${(colIdx * 4 + rowIdx) * 150}ms`,
+                    }}
+                    className={`h-full w-auto transition-transform duration-500 hover:scale-110
+                    ${isInView ? "animate-reveal-left-to-right" : "opacity-0"}
+                  `}
+                  />
+                </div>
+              );
+            })}
           </div>
-          <div className="h-[19rem] w-auto overflow-hidden">
-            <img
-              src="/image_2.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[19rem] w-auto overflow-hidden">
-            <img
-              src="/image_1.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[19rem] w-auto overflow-hidden">
-            <img
-              src="/image_2.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[19rem] w-auto overflow-hidden">
-            <img
-              src="/image_1.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-        </div>
-
-        {/* Column 2 */}
-        <div className="flex flex-col gap-2">
-          <div className="h-[26rem] w-auto overflow-hidden">
-            <img
-              src="/image_2.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[26rem] w-auto overflow-hidden">
-            <img
-              src="/image_1.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[26rem] w-auto overflow-hidden">
-            <img
-              src="/image_2.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[26rem] w-auto overflow-hidden">
-            <img
-              src="/image_1.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-        </div>
-
-        {/* Column 3 */}
-        <div className="flex flex-col gap-2">
-          <div className="h-[24rem] w-auto overflow-hidden">
-            <img
-              src="/image_1.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[24rem] w-auto overflow-hidden">
-            <img
-              src="/image_2.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[24rem] w-auto overflow-hidden">
-            <img
-              src="/image_1.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-          <div className="h-[24rem] w-auto overflow-hidden">
-            <img
-              src="/image_2.png"
-              alt="image"
-              className="h-full w-auto hover:scale-110 delay-animation"
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
