@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
+
 const PastPartners = () => {
   const mediaPartners = [
     {
@@ -37,9 +40,22 @@ const PastPartners = () => {
       image: "/partner4.jpg",
     },
   ];
+  const headRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.1);
+  const mid = Math.ceil(mediaPartners.length / 2);
+  const topLogos = mediaPartners.slice(0, mid);
+  const bottomLogos = mediaPartners.slice(mid);
+  const leftRowRef = useRef<HTMLDivElement>(null);
+  const rightRowRef = useRef<HTMLDivElement>(null);
+  const leftCopyRef = useRef<HTMLDivElement>(null);
+  const RowCopyRef = useRef<HTMLDivElement>(null);
+
+  useMarqueeAnimation(leftRowRef, rightRowRef, "x", 40);
+  useMarqueeAnimation(leftCopyRef, RowCopyRef, "x", 40);
+
   return (
     <div className="main-container py-16">
-      <div className="w-full">
+      <div className="w-full" ref={headRef}>
         <p className="text-5xl">Our Past</p>
         <p className="text-yellow-600 text-7xl">Partners</p>
       </div>
@@ -48,20 +64,36 @@ const PastPartners = () => {
       <div className="flex justify-end my-2">
         <p className="text-white text-right text-2xl">Summit Partners</p>
       </div>
-      <div className="flex justify-center sm:justify-end">
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 mb-10 w-full lg:w-[85%]">
-          {mediaPartners.map((_, index) => (
-            <div
-              key={index}
-              className=" aspect-[4/2] w-full h-32 overflow-hidden"
-            >
-              <img
-                src={_?.image}
-                alt="image"
-                className="delay-animation w-full h-full hover:scale-110"
-              />
-            </div>
-          ))}
+      <div className="w-full flex justify-end overflow-hidden">
+        <div className="w-[81%] overflow-hidden">
+          <div ref={leftRowRef} className="flex gap-1 mb-4 w-max ">
+            {topLogos.map((item, index) => (
+              <div
+                key={index}
+                className="aspect-[4/2] w-full h-32 overflow-hidden"
+              >
+                <img
+                  src={item.image}
+                  alt="logo"
+                  className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                />
+              </div>
+            ))}
+          </div>
+          <div ref={rightRowRef} className="flex gap-1 mb-4 w-max">
+            {bottomLogos.map((item, index) => (
+              <div
+                key={index}
+                className="aspect-[4/2] w-full h-32 overflow-hidden"
+              >
+                <img
+                  src={item.image}
+                  alt="logo"
+                  className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -71,20 +103,36 @@ const PastPartners = () => {
           Media Association Partners
         </p>
       </div>
-      <div className="flex justify-center sm:justify-end px-2">
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 w-full lg:w-[85%]">
-          {mediaPartners.map((_, index) => (
-            <div
-              key={index}
-              className=" aspect-[4/2] w-full h-32 overflow-hidden"
-            >
-              <img
-                src={_?.image}
-                alt="image"
-                className="delay-animation w-full h-full hover:scale-110"
-              />
-            </div>
-          ))}
+      <div className="w-full flex justify-end overflow-hidden">
+        <div className="w-[81%] overflow-hidden">
+          <div ref={leftCopyRef} className="flex gap-1 mb-4 w-max ">
+            {topLogos.map((item, index) => (
+              <div
+                key={index}
+                className="aspect-[4/2] w-full h-32 overflow-hidden"
+              >
+                <img
+                  src={item.image}
+                  alt="logo"
+                  className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                />
+              </div>
+            ))}
+          </div>
+          <div ref={RowCopyRef} className="flex gap-1 mb-4 w-max">
+            {bottomLogos.map((item, index) => (
+              <div
+                key={index}
+                className="aspect-[4/2] w-full h-32 overflow-hidden"
+              >
+                <img
+                  src={item.image}
+                  alt="logo"
+                  className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
