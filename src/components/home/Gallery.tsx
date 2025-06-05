@@ -19,24 +19,27 @@ const Gallery = () => {
       </div>
 
       {/* Gallery Grid */}
-      <div ref={ref} className="grid md:grid-cols-3 gap-1">
-        {/* Columns */}
-        {[...Array(3)].map((_, colIdx) => (
-          <div key={colIdx} className="flex flex-col gap-2">
+      <div ref={ref} className="grid grid-cols-3 gap-1">
+        {[0, 1, 2].map((colIdx) => (
+          <div key={colIdx} className={`flex flex-col gap-1`}>
             {[...Array(4)].map((_, rowIdx) => {
               const imageIndex = (colIdx + rowIdx) % 2 === 0 ? 1 : 2;
               const src = `/image_${imageIndex}.png`;
               return (
-                <div key={rowIdx} className="h-[24rem] w-auto overflow-hidden">
+                <div
+                  key={rowIdx}
+                  className={` w-full overflow-hidden ${
+                    colIdx === 1 ? "h-[26rem]" : "h-[24rem]"
+                  }`}
+                >
                   <img
                     src={src}
                     alt={`image ${imageIndex}`}
                     style={{
                       animationDelay: `${(colIdx * 4 + rowIdx) * 150}ms`,
                     }}
-                    className={`h-full w-auto
-                    ${isInView ? "animate-reveal-left-to-right" : "opacity-0"}
-                  `}
+                    className={`h-full w-full object-cover transition-transform duration-500 ease-in-out
+                ${isInView ? "animate-reveal-left-to-right" : "opacity-0"}`}
                   />
                 </div>
               );

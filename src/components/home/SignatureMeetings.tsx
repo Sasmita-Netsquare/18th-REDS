@@ -50,7 +50,7 @@ const SignatureMeetings = () => {
           {/* Image Animation Wrapper */}
           <div className=" w-full flex md:flex-row flex-col gap-2 overflow-hidden max-h-[500px]">
             {/* Left Column */}
-            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden">
+            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden ">
               <div ref={leftContainerRef} className="flex flex-col gap-2">
                 <div className="lg:w-80 w-full h-auto overflow-hidden">
                   <img
@@ -70,7 +70,7 @@ const SignatureMeetings = () => {
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden">
+            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden md:mt-10">
               <div ref={rightContainerRef} className="flex flex-col gap-2">
                 <div className="lg:w-80 w-full h-auto overflow-hidden">
                   <img

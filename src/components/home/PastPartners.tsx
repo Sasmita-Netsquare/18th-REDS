@@ -61,16 +61,16 @@ const PastPartners = () => {
       </div>
 
       {/* Summit Partners */}
-      <div className="flex justify-end my-2">
+      <div className="flex justify-end mb-4">
         <p className="text-white text-right text-2xl">Summit Partners</p>
       </div>
       <div className="w-full flex justify-end overflow-hidden">
         <div className="w-[81%] overflow-hidden">
-          <div ref={leftRowRef} className="flex gap-1 mb-4 w-max ">
+          <div ref={leftRowRef} className="flex mb-4 w-max ">
             {topLogos.map((item, index) => (
               <div
                 key={index}
-                className="aspect-[4/2] w-full h-32 overflow-hidden"
+                className="aspect-[4/2] w-full h-28 overflow-hidden"
               >
                 <img
                   src={item.image}
@@ -80,11 +80,11 @@ const PastPartners = () => {
               </div>
             ))}
           </div>
-          <div ref={rightRowRef} className="flex gap-1 mb-4 w-max">
+          <div ref={rightRowRef} className="flex mb-4 w-max">
             {bottomLogos.map((item, index) => (
               <div
                 key={index}
-                className="aspect-[4/2] w-full h-32 overflow-hidden"
+                className="aspect-[4/2] w-full h-28 overflow-hidden"
               >
                 <img
                   src={item.image}
@@ -105,11 +105,11 @@ const PastPartners = () => {
       </div>
       <div className="w-full flex justify-end overflow-hidden">
         <div className="w-[81%] overflow-hidden">
-          <div ref={leftCopyRef} className="flex gap-1 mb-4 w-max ">
+          <div ref={leftCopyRef} className="flex mb-4 w-max ">
             {topLogos.map((item, index) => (
               <div
                 key={index}
-                className="aspect-[4/2] w-full h-32 overflow-hidden"
+                className="aspect-[4/2] w-full h-28 overflow-hidden"
               >
                 <img
                   src={item.image}
@@ -119,11 +119,11 @@ const PastPartners = () => {
               </div>
             ))}
           </div>
-          <div ref={RowCopyRef} className="flex gap-1 mb-4 w-max">
+          <div ref={RowCopyRef} className="flex mb-4 w-max">
             {bottomLogos.map((item, index) => (
               <div
                 key={index}
-                className="aspect-[4/2] w-full h-32 overflow-hidden"
+                className="aspect-[4/2] w-full h-28 overflow-hidden"
               >
                 <img
                   src={item.image}
