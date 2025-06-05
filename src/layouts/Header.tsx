@@ -5,14 +5,14 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="main-container py-3 px-4 lg:px-8 bg-black shadow-md">
+    <header className="main-container py-3 bg-black shadow-md">
       <div className="flex items-center justify-between w-full relative">
         {/* Logo */}
         <div className="flex items-center">
           <img
             src="/main_logo.png"
             alt="Logo"
-            className="w-32 lg:w-48 h-auto"
+            className="w-32 lg:w-56 h-auto"
           />
         </div>
 
