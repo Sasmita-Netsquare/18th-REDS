@@ -17,7 +17,7 @@ body {
   margin: 0;
   @apply bg-cover bg-center bg-no-repeat min-h-screen;
   background-attachment: fixed;
-  background-image: url("./backgroundImage.png");
+  background-image: url("/backgroundImage.png");
   font-family: "Suisse Int'l", sans-serif;
   color: #ffffff; /* Optional: make text white to contrast with black bg */
 }
