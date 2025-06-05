@@ -1,10 +1,17 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 const SignatureMeetings = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef<HTMLDivElement>(null);
+  useHeadingGroupAnimation(headRef, 0.1);
+
+  const leftContainerRef = useRef<HTMLDivElement>(null);
+  const rightContainerRef = useRef<HTMLDivElement>(null);
+  useMarqueeAnimation(leftContainerRef, rightContainerRef, "y", 15);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -31,45 +38,54 @@ const SignatureMeetings = () => {
       }
     );
   }, []);
+
   return (
     <div className="main-container text-white py-16">
       <div className="flex flex-col gap-6">
-        <div className="w-full">
+        <div className="w-full" ref={headRef}>
           <p className="text-5xl">Signature</p>
           <p className="text-yellow-600 text-7xl">Meetings</p>
         </div>
         <div className="flex lg:flex-row flex-col gap-8">
-          <div className="flex md:flex-row flex-col gap-2 w-full">
-            <div className="flex flex-col gap-2">
-              <div className="lg:w-80 w-full h-auto overflow-hidden">
-                <img
-                  src="/meeting_1.png"
-                  alt="Meeting 1"
-                  className=" w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
-                />
-              </div>
-              <div className="lg:w-80 w-full h-auto overflow-hidden">
-                <img
-                  src="/meeting_3.png"
-                  alt="Meeting 3"
-                  className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
-                />
+          {/* Image Animation Wrapper */}
+          <div className=" w-full flex md:flex-row flex-col gap-2 overflow-hidden max-h-[500px]">
+            {/* Left Column */}
+            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden">
+              <div ref={leftContainerRef} className="flex flex-col gap-2">
+                <div className="lg:w-80 w-full h-auto overflow-hidden">
+                  <img
+                    src="/meeting_1.png"
+                    alt="Meeting 1"
+                    className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <div className="lg:w-80 w-full h-auto overflow-hidden">
+                  <img
+                    src="/meeting_3.png"
+                    alt="Meeting 3"
+                    className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
               </div>
             </div>
-            <div className="flex flex-col gap-2 mt-10">
-              <div className="lg:w-80 w-full h-auto overflow-hidden">
-                <img
-                  src="/meeting_2.png"
-                  alt="Meeting 2"
-                  className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
-                />
-              </div>
-              <div className="lg:w-80 w-full h-auto overflow-hidden">
-                <img
-                  src="/meeting_4.png"
-                  alt="Meeting 4"
-                  className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
-                />
+
+            {/* Right Column */}
+            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden">
+              <div ref={rightContainerRef} className="flex flex-col gap-2">
+                <div className="lg:w-80 w-full h-auto overflow-hidden">
+                  <img
+                    src="/meeting_2.png"
+                    alt="Meeting 2"
+                    className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <div className="lg:w-80 w-full h-auto overflow-hidden">
+                  <img
+                    src="/meeting_4.png"
+                    alt="Meeting 4"
+                    className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
               </div>
             </div>
           </div>
