@@ -1,8 +1,14 @@
+import { useRef } from "react";
+import { useHeadingGroupAnimation } from "../hooks";
+
 const Gallery = () => {
+  const headRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.1);
+
   return (
     <div className="main-container py-16">
       {/* Header */}
-      <div className="w-full pb-5">
+      <div className="w-full pb-5" ref={headRef}>
         <p className="text-5xl">Photos</p>
         <p className="text-yellow-600 text-7xl">Gallery</p>
       </div>
