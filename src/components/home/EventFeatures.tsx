@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
+import { useInView } from "../hooks/useInView";
 
 interface FeatureItem {
   title: string;
@@ -44,24 +45,30 @@ const EventFeatures = () => {
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
 
+  const { ref, isInView } = useInView({
+    threshold: 0.3,
+  });
+
   return (
-    <div className="main-container text-white py-12 ">
+    <div className="main-container text-white py-12 " ref={ref}>
       <div className=" mx-auto flex flex-col gap-6">
         <div className="w-full" ref={headRef}>
           <p className="text-5xl">Event</p>
           <p className="text-yellow-600 text-7xl">Features</p>
         </div>
-
         <div className="grid grid-cols-12">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`relative bg-[#111] border-4 border-[#1c1c1e] group ${feature.css}`}
+              className={`relative bg-[#111] border-4 border-[#1c1c1e] group overflow-hidden ${feature.css}`}
             >
               <img
                 src={feature.image}
                 alt={feature.title}
-                className="w-full md:h-96 h-60 object-cover opacity-80 group-hover:opacity-100 transition duration-300"
+                style={{ animationDelay: `${index * 200}ms` }}
+                className={`w-full md:h-96 h-60 object-cover opacity-80 group-hover:opacity-100 transition duration-300 
+              ${isInView ? "animate-reveal-left-to-right" : "opacity-0"}
+            `}
               />
               <div className="absolute bottom-2 left-2 text-sm sm:text-base font-medium bg-black bg-opacity-50 px-3 py-1 rounded">
                 {feature.title}

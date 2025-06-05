@@ -37,3 +37,16 @@ body {
     @apply !transition-all !ease-in-out !duration-500;
   }
 }
+
+@keyframes reveal-left-to-right {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-reveal-left-to-right {
+  animation: reveal-left-to-right 2.5s ease-out forwards;
+}
