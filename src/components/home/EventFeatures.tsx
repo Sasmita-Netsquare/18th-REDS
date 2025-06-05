@@ -66,7 +66,7 @@ const EventFeatures = () => {
                 src={feature.image}
                 alt={feature.title}
                 style={{ animationDelay: `${index * 200}ms` }}
-                className={`w-full md:h-96 h-60 object-cover opacity-80 group-hover:opacity-100 transition duration-300 
+                className={`w-full md:h-96 h-60 object-cover opacity-80 
               ${isInView ? "animate-reveal-left-to-right" : "opacity-0"}
             `}
               />

@@ -98,7 +98,7 @@ const PastPartners = () => {
       </div>
 
       {/* Media Association Partners */}
-      <div className="flex justify-end my-2">
+      <div className="flex justify-end my-2 mt-8">
         <p className="text-white text-right text-2xl">
           Media Association Partners
         </p>

@@ -34,7 +34,7 @@ const Gallery = () => {
                     style={{
                       animationDelay: `${(colIdx * 4 + rowIdx) * 150}ms`,
                     }}
-                    className={`h-full w-auto transition-transform duration-500 hover:scale-110
+                    className={`h-full w-auto
                     ${isInView ? "animate-reveal-left-to-right" : "opacity-0"}
                   `}
                   />
