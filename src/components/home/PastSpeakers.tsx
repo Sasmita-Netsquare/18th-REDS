@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useHeadingGroupAnimation } from "../hooks";
 
 const PastSpeakers = () => {
   const speakerArr = [
@@ -36,6 +37,8 @@ const PastSpeakers = () => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.1);
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -64,7 +67,7 @@ const PastSpeakers = () => {
 
   return (
     <div className="main-container py-16 flex flex-col gap-5">
-      <div className="w-full">
+      <div className="w-full" ref={headRef}>
         <p className="text-5xl">Our Past</p>
         <p className="text-yellow-600 text-7xl">Speakers</p>
       </div>
