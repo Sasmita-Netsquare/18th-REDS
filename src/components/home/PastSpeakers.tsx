@@ -68,11 +68,11 @@ const PastSpeakers = () => {
   return (
     <div className="main-container py-16 flex flex-col gap-5">
       <div className="w-full" ref={headRef}>
-        <p className="text-5xl">Our Past</p>
-        <p className="text-yellow-600 text-7xl">Speakers</p>
+        <p className="lg:text-5xl md:text-5xl text-3xl">Our Past</p>
+        <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Speakers</p>
       </div>
 
-      <div className="flex justify-end items-end overflow-hidden">
+      <div className="flex justify-end items-end overflow-hidden lg:ml-22 md:px-[2px]">
         <div
           ref={scrollRef}
           className="flex gap-5 w-full lg:w-[80%] overflow-x-auto scroll-smooth no-scrollbar"
