@@ -8,7 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 const EventAbout = () => {
   const containerRef = useRef(null);
   const headRef = useRef(null);
-  useHeadingGroupAnimation(headRef, 0.1);
+  const imageRef = useRef(null);
+  useHeadingGroupAnimation(headRef, 0.3);
+  useHeadingGroupAnimation(imageRef, 0.3);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -37,23 +39,23 @@ const EventAbout = () => {
   }, []);
   return (
     <div className="main-container flex items-center justify-center py-16">
-      <div className="flex flex-col justify-center items-center gap-8 w-full">
-        <div className="w-full" ref={headRef}>
-          <p className="text-5xl">About our</p>
-          <p className="text-yellow-600 text-7xl">Event</p>
+      <div className="flex flex-col justify-center items-center w-full">
+        <div className="w-full lg:px-[0.03rem] md:px-[0.13rem]" ref={headRef}>
+          <p className="lg:text-5xl md:text-5xl text-3xl">About our</p>
+          <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Event</p>
         </div>
-        <div className="flex lg:flex-row flex-col w-full">
-          <div className="mt-10 w-full">
+        <div className="flex lg:flex-row flex-col w-full md:gap-5 gap-4 sm:justify-center sm:items-center">
+          <div className="mt-10 lg:w-[100%] lg:px-[0.01rem] md:px-[0.1rem] md:w-full" ref={imageRef}>
             <img
               src="/image_1.png"
               alt="image"
-              className="w-full lg:w-[70rem] h-auto rounded-md"
+              className="w-full h-auto lg:h-[100%] rounded-md lg:w-[100%]"
             />
           </div>
 
           {/* Right Section */}
           <div
-            className="flex flex-col gap-5 justify-start items-start w-2/3 lg:pl-[5rem]"
+            className="flex flex-col gap-5 justify-start items-start lg:w-[100%] lg:pl-[3.8rem] lg:pr-[12rem] md:w-[100%] sm:w-[98%]"
             ref={containerRef}
           >
             <p>
