@@ -53,8 +53,8 @@ const EventFeatures = () => {
     <div className="main-container text-white py-12 " ref={ref}>
       <div className=" mx-auto flex flex-col gap-6">
         <div className="w-full" ref={headRef}>
-          <p className="text-5xl">Event</p>
-          <p className="text-yellow-600 text-7xl">Features</p>
+          <p className="lg:text-5xl md:text-5xl text-3xl">Event</p>
+          <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Features</p>
         </div>
         <div className="grid grid-cols-12">
           {features.map((feature, index) => (
