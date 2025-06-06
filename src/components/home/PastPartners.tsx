@@ -56,17 +56,17 @@ const PastPartners = () => {
   return (
     <div className="main-container py-16">
       <div className="w-full" ref={headRef}>
-        <p className="text-5xl">Our Past</p>
-        <p className="text-yellow-600 text-7xl">Partners</p>
+        <p className="lg:text-5xl md:text-5xl text-3xl">Our Past</p>
+        <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Partners</p>
       </div>
 
       {/* Summit Partners */}
-      <div className="flex justify-end mb-4">
+      <div className="flex md:justify-end lg:justify-end my-2 pb-3 md:pr-1 sm:justify-center">
         <p className="text-white text-right text-2xl">Summit Partners</p>
       </div>
-      <div className="w-full flex justify-end overflow-hidden">
-        <div className="w-[81%] overflow-hidden">
-          <div ref={leftRowRef} className="flex mb-4 w-max ">
+      <div className="w-full flex justify-end overflow-hidden pb-6">
+        <div className="lg:w-[75%] overflow-hidden">
+          <div ref={leftRowRef} className="flex gap-1 mb-4 w-max ">
             {topLogos.map((item, index) => (
               <div
                 key={index}
@@ -80,7 +80,7 @@ const PastPartners = () => {
               </div>
             ))}
           </div>
-          <div ref={rightRowRef} className="flex mb-4 w-max">
+          <div ref={rightRowRef} className="flex gap-1 mb-4 w-max">
             {bottomLogos.map((item, index) => (
               <div
                 key={index}
@@ -98,14 +98,14 @@ const PastPartners = () => {
       </div>
 
       {/* Media Association Partners */}
-      <div className="flex justify-end my-2 mt-8">
+      <div className="flex md:justify-end lg:justify-end my-2 pb-3 md:pr-1 sm:justify-center">
         <p className="text-white text-right text-2xl">
           Media Association Partners
         </p>
       </div>
       <div className="w-full flex justify-end overflow-hidden">
-        <div className="w-[81%] overflow-hidden">
-          <div ref={leftCopyRef} className="flex mb-4 w-max ">
+        <div className="lg:w-[75%] overflow-hidden">
+          <div ref={leftCopyRef} className="flex gap-1 mb-4 w-max ">
             {topLogos.map((item, index) => (
               <div
                 key={index}
@@ -119,7 +119,7 @@ const PastPartners = () => {
               </div>
             ))}
           </div>
-          <div ref={RowCopyRef} className="flex mb-4 w-max">
+          <div ref={RowCopyRef} className="flex gap-1 mb-4 w-max">
             {bottomLogos.map((item, index) => (
               <div
                 key={index}
