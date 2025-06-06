@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 interface AnimatedNumberProps {
   value: number;
   suffix?: string;
+  className?: string;
 }
 
 const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
@@ -28,7 +29,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
       scrollTrigger: {
         trigger: numberRef.current,
         start: "top 80%",
-        toggleActions: "restart none none none",
+        toggleActions: "restart none restart none",
       },
       onUpdate: () => {
         if (numberRef.current) {
@@ -44,7 +45,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
   }, [value, suffix]);
 
   return (
-    <div ref={numberRef} className="md:text-5xl text-4xl">
+    <div ref={numberRef} className="lg:text-5xl md:text-5xl text-2xl">
       0{suffix}
     </div>
   );
@@ -56,45 +57,45 @@ const EventNumbers: React.FC = () => {
 
   return (
     <div className="main-container flex items-center justify-center py-16">
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 w-full ">
+      <div className="grid lg:grid-cols-2 grid-cols-1 w-full ">
         {/* Left Section */}
-        <div className="w-full" ref={headRef}>
-          <p className="text-5xl">Event by</p>
-          <p className="text-yellow-600 text-7xl">Numbers</p>
+        <div className="w-full sm:pb-10" ref={headRef}>
+          <p className="lg:text-5xl md:text-5xl text-3xl">Event by</p>
+          <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Numbers</p>
         </div>
 
         {/* Right Section - Stats Grid */}
-        <div className="text-white flex items-center justify-center border-4 border-[#1c1c1e] lg:mt-36">
+        <div className="text-white flex items-center justify-center border-4 border-[#1c1c1e] lg:mt-36 md:mt-0 mt-5">
           <div className="grid grid-cols-3 grid-rows-3 max-w-3xl w-full">
             {/* Top full-width box */}
             <div className="col-span-3 bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 ">
               <AnimatedNumber value={24} />
-              <div className="text-xl">Events</div>
+              <div className="lg:text-xl md:text-xl text-lg">Events</div>
             </div>
 
             {/* Middle 3 boxes */}
             <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-7">
               <AnimatedNumber value={381} suffix="+" />
-              <div className="text-xl">Speakers</div>
+              <div className="lg:text-xl md:text-xl text-lg">Speakers</div>
             </div>
             <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-7">
               <AnimatedNumber value={1050} suffix="+" />
-              <div className="text-xl">Solution Providers</div>
+              <div className="lg:text-xl md:text-xl text-lg text-center">Solution Providers</div>
             </div>
             <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-7">
               <AnimatedNumber value={2592} suffix="+" />
-              <div className="text-xl">Buyers</div>
+              <div className="lg:text-xl md:text-xl text-lg">Buyers</div>
             </div>
 
             {/* Bottom 2 boxes */}
             <div className="flex col-span-3 w-full ">
               <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 w-full">
                 <AnimatedNumber value={24400} suffix="+" />
-                <div className="text-xl">B2B Meetings</div>
+                <div className="lg:text-xl md:text-xl text-lg">B2B Meetings</div>
               </div>
               <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 w-full">
                 <AnimatedNumber value={24400} suffix="+" />
-                <div className="text-xl">B2B Meetings</div>
+                <div className="lg:text-xl md:text-xl text-lg">B2B Meetings</div>
               </div>
             </div>
           </div>
