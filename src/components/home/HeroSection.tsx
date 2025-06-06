@@ -46,9 +46,9 @@ export default function HeroSection() {
 
   return (
     <>
-      <div className="main-container py-10" id="hero">
+      <div className="main-container lg:py-10 md:pb-6 pb-4" id="hero">
         <div className="text-center" ref={headRef}>
-          <h1 className="lg:text-8xl text-5xl flex justify-center space-x-6 lg:mt-40 mt-30">
+          <h1 className="lg:text-9xl md:text-6xl text-4xl flex justify-center lg:space-x-6 md:space-x-4 space-x-2 lg:mt-40 mt-30">
             <span ref={leftRef}>Africa</span>
             <span ref={rightRef}>Risen</span>
           </h1>
@@ -59,7 +59,11 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <img src="/hero_bg.png" alt="Hero Background" className="w-auto h-auto" />
+      <img
+        src="/hero_bg.png"
+        alt="Hero Background"
+        className="w-auto h-auto px-[0.80rem] md:px-[1.670rem] lg:px-[3.300rem]"
+      />
     </>
   );
 }

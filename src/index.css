@@ -24,7 +24,7 @@ body {
 
 @layer components {
   .main-container {
-    @apply container px-2 md:px-4 lg:px-6 2xl:px-[3.8rem];
+    @apply mx-auto px-[0.75rem] md:px-[1.560rem] lg:px-[3.300rem] 2xl:px-[3.8rem];
   }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
