@@ -43,12 +43,12 @@ const SignatureMeetings = () => {
     <div className="main-container text-white py-16">
       <div className="flex flex-col gap-6">
         <div className="w-full" ref={headRef}>
-          <p className="text-5xl">Signature</p>
-          <p className="text-yellow-600 text-7xl">Meetings</p>
+          <p className="lg:text-5xl md:text-5xl text-3xl">Signature</p>
+          <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Meetings</p>
         </div>
-        <div className="flex lg:flex-row flex-col gap-8">
+        <div className="flex lg:flex-row flex-col gap-4">
           {/* Image Animation Wrapper */}
-          <div className=" w-full flex md:flex-row flex-col gap-2 overflow-hidden max-h-[500px]">
+          <div className=" w-full flex md:flex-row flex-col gap-2 overflow-hidden lg:max-h-[500px] md:max-h-[500px] max-h-[800px]">
             {/* Left Column */}
             <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden ">
               <div ref={leftContainerRef} className="flex flex-col gap-2">
@@ -70,7 +70,7 @@ const SignatureMeetings = () => {
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden md:mt-10">
+            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden">
               <div ref={rightContainerRef} className="flex flex-col gap-2">
                 <div className="lg:w-80 w-full h-auto overflow-hidden">
                   <img
@@ -90,7 +90,7 @@ const SignatureMeetings = () => {
             </div>
           </div>
           <div className=" w-full" ref={containerRef}>
-            <p className=" leading-relaxed text-gray-300">
+            <p className="leading-relaxed text-gray-300 lg:w-[75%] sm:w-full">
               The key offering of Summits organized by GBB are the pre-arranged,
               diligently curated B2B meetings scheduled for the delegates and
               suppliers. The invited delegates are pre-qualified based on a
