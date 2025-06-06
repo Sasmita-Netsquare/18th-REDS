@@ -34,15 +34,17 @@ const Testimonials = () => {
   };
 
   return (
-    <>
-      <section className="main-container pt-16">
+    <div className="main-container pt-16">
+      <section>
         <div className="w-full" ref={headRef}>
-          <p className="text-5xl">Client</p>
-          <p className="text-yellow-600 text-7xl">Testimonials</p>
+          <p className="lg:text-5xl md:text-5xl text-3xl">Client</p>
+          <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">
+            Testimonials
+          </p>
         </div>
       </section>
-      <div className="flex justify-end w-full pb-16 px-4 sm:px-6">
-        <div className="w-full lg:w-[70%] flex flex-col gap-10">
+      <div className="flex justify-end w-full pb-16">
+        <div className="w-full lg:w-[75%] flex flex-col gap-10">
           {/* Navigation Buttons */}
           <div className="flex justify-center items-center gap-4 sm:gap-12">
             <div className="flex gap-2">
@@ -62,7 +64,7 @@ const Testimonials = () => {
           </div>
 
           {/* Testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid md:grid-cols-2 gap-3">
             {[
               testimonials[index], // always show this one
               ...(window.innerWidth >= 768
@@ -87,7 +89,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
