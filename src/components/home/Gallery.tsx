@@ -14,8 +14,8 @@ const Gallery = () => {
     <div className="main-container py-16" ref={ref}>
       {/* Header */}
       <div className="w-full pb-5" ref={headRef}>
-        <p className="text-5xl">Photos</p>
-        <p className="text-yellow-600 text-7xl">Gallery</p>
+        <p className="lg:text-5xl md:text-5xl text-3xl">Photos</p>
+        <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Gallery</p>
       </div>
 
       {/* Gallery Grid */}
