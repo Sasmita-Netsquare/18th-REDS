@@ -13,18 +13,23 @@
 }
 html,
 body {
-  height: 100%;
   margin: 0;
-  @apply bg-cover bg-center bg-no-repeat min-h-screen;
+  padding: 0;
+  @apply min-h-screen overflow-x-hidden;
+  overflow-y: auto;
   background-attachment: fixed;
   background-image: url("/backgroundImage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   font-family: "Suisse Int'l", sans-serif;
   color: #ffffff; /* Optional: make text white to contrast with black bg */
+  overscroll-behavior-y: none;
 }
 
 @layer components {
   .main-container {
-    @apply mx-auto px-[0.75rem] md:px-[1.560rem] lg:px-[3.300rem] 2xl:px-[3.8rem];
+    @apply mx-auto max-w-screen overflow-hidden w-full px-[0.75rem] md:px-[1.560rem] lg:px-[3.260rem] 2xl:px-[3.8rem];
   }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
