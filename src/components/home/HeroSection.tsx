@@ -14,9 +14,9 @@ export default function HeroSection() {
 
   useHeadingGroupAnimation(headRef, 1);
   // Delay the animation for infoRef
-  setTimeout(() => {
-    useHeadingGroupAnimation(infoRef, 1);
-  }, 2000);
+  // setTimeout(() => {
+  useHeadingGroupAnimation(infoRef, 1.5);
+  // }, 2000);
 
   useEffect(() => {
     // Animate the title words on scroll
