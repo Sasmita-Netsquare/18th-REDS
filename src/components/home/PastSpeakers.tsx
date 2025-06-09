@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
+import SectionTitle from "./SectionTitle";
 
 const PastSpeakers = () => {
   const speakerArr = [
@@ -67,11 +68,7 @@ const PastSpeakers = () => {
 
   return (
     <div className="main-container py-16 flex flex-col gap-5">
-      <div className="w-full" ref={headRef}>
-        <p className="lg:text-5xl md:text-5xl text-3xl">Our Past</p>
-        <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Speakers</p>
-      </div>
-
+      <SectionTitle title="Our Past" subtitle="Speakers" ref={headRef} />
       <div className="flex justify-end items-end overflow-hidden lg:ml-22 md:px-[2px]">
         <div
           ref={scrollRef}

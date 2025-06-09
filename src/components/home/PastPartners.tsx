@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
+import SectionTitle from "./SectionTitle";
 
 const PastPartners = () => {
   const mediaPartners = [
@@ -50,16 +51,12 @@ const PastPartners = () => {
   const leftCopyRef = useRef<HTMLDivElement>(null);
   const RowCopyRef = useRef<HTMLDivElement>(null);
 
-  useMarqueeAnimation(leftRowRef, rightRowRef, "x", 40);
-  useMarqueeAnimation(leftCopyRef, RowCopyRef, "x", 40);
+  useMarqueeAnimation(leftRowRef, rightRowRef, "x", 30);
+  useMarqueeAnimation(leftCopyRef, RowCopyRef, "x", 30);
 
   return (
     <div className="main-container py-16">
-      <div className="w-full" ref={headRef}>
-        <p className="lg:text-5xl md:text-5xl text-3xl">Our Past</p>
-        <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Partners</p>
-      </div>
-
+      <SectionTitle title="Our Past" subtitle="Partners" ref={headRef} />
       {/* Summit Partners */}
       <div className="flex md:justify-end lg:justify-end my-2 pb-3 md:pr-1 sm:justify-center">
         <p className="text-white text-right text-2xl">Summit Partners</p>

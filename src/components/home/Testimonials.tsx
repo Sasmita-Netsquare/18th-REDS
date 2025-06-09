@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useHeadingGroupAnimation } from "../hooks";
+import SectionTitle from "./SectionTitle";
 
 const testimonials = [
   {
@@ -36,12 +37,7 @@ const Testimonials = () => {
   return (
     <div className="main-container pt-16">
       <section>
-        <div className="w-full" ref={headRef}>
-          <p className="lg:text-5xl md:text-5xl text-3xl">Client</p>
-          <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">
-            Testimonials
-          </p>
-        </div>
+        <SectionTitle title="Client" subtitle="Testimonials" ref={headRef} />
       </section>
       <div className="flex justify-end w-full pb-16">
         <div className="w-full lg:w-[75%] flex flex-col gap-10">

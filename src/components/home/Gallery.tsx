@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
 import { useInView } from "../hooks/useInView";
+import SectionTitle from "./SectionTitle";
 
 const Gallery = () => {
   const headRef = useRef(null);
@@ -13,13 +14,9 @@ const Gallery = () => {
   return (
     <div className="main-container py-16" ref={ref}>
       {/* Header */}
-      <div className="w-full pb-5" ref={headRef}>
-        <p className="lg:text-5xl md:text-5xl text-3xl">Photos</p>
-        <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Gallery</p>
-      </div>
-
+      <SectionTitle title="Photos" subtitle="Gallery" ref={headRef} />
       {/* Gallery Grid */}
-      <div ref={ref} className="grid grid-cols-3 gap-1">
+      <div ref={ref} className="grid grid-cols-3 gap-1 pt-5">
         {[0, 1, 2].map((colIdx) => (
           <div key={colIdx} className={`flex flex-col gap-1`}>
             {[...Array(4)].map((_, rowIdx) => {

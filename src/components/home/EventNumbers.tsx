@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
+import SectionTitle from "./SectionTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,13 +60,9 @@ const EventNumbers: React.FC = () => {
     <div className="main-container flex items-center justify-center py-16">
       <div className="grid lg:grid-cols-2 grid-cols-1 w-full ">
         {/* Left Section */}
-        <div className="w-full sm:pb-10" ref={headRef}>
-          <p className="lg:text-5xl md:text-5xl text-3xl">Event by</p>
-          <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Numbers</p>
-        </div>
-
+        <SectionTitle title="Event by" subtitle="Numbers" ref={headRef} />
         {/* Right Section - Stats Grid */}
-        <div className="text-white flex items-center justify-center border-4 border-[#1c1c1e] lg:mt-36 md:mt-0 mt-5">
+        <div className="text-white flex items-center justify-center border-4 border-[#1c1c1e] lg:mt-36 md:mt-5 mt-5">
           <div className="grid grid-cols-3 grid-rows-3 max-w-3xl w-full">
             {/* Top full-width box */}
             <div className="col-span-3 bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 ">
@@ -80,7 +77,9 @@ const EventNumbers: React.FC = () => {
             </div>
             <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-7">
               <AnimatedNumber value={1050} suffix="+" />
-              <div className="lg:text-xl md:text-xl text-lg text-center">Solution Providers</div>
+              <div className="lg:text-xl md:text-xl text-lg text-center">
+                Solution Providers
+              </div>
             </div>
             <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-7">
               <AnimatedNumber value={2592} suffix="+" />
@@ -91,11 +90,15 @@ const EventNumbers: React.FC = () => {
             <div className="flex col-span-3 w-full ">
               <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 w-full">
                 <AnimatedNumber value={24400} suffix="+" />
-                <div className="lg:text-xl md:text-xl text-lg">B2B Meetings</div>
+                <div className="lg:text-xl md:text-xl text-lg">
+                  B2B Meetings
+                </div>
               </div>
               <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 w-full">
                 <AnimatedNumber value={24400} suffix="+" />
-                <div className="lg:text-xl md:text-xl text-lg">B2B Meetings</div>
+                <div className="lg:text-xl md:text-xl text-lg">
+                  B2B Meetings
+                </div>
               </div>
             </div>
           </div>

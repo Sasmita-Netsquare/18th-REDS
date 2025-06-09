@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
+import SectionTitle from "./SectionTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,14 +39,14 @@ const EventAbout = () => {
     );
   }, []);
   return (
-    <div className="main-container flex items-center justify-center py-16">
+    <div className="main-container flex items-center justify-center lg:py-10">
       <div className="flex flex-col justify-center items-center w-full">
-        <div className="w-full lg:px-[0.03rem] md:px-[0.13rem]" ref={headRef}>
-          <p className="lg:text-5xl md:text-5xl text-3xl">About our</p>
-          <p className="text-yellow-600 lg:text-8xl md:text-6xl text-5xl">Event</p>
-        </div>
+        <SectionTitle title="About our" subtitle="Event" ref={headRef} />
         <div className="flex lg:flex-row flex-col w-full md:gap-5 gap-4 sm:justify-center sm:items-center">
-          <div className="mt-10 lg:w-[100%] lg:px-[0.01rem] md:px-[0.1rem] md:w-full" ref={imageRef}>
+          <div
+            className="mt-10 lg:w-[100%] lg:px-[0.01rem] md:px-[0.1rem] md:w-full"
+            ref={imageRef}
+          >
             <img
               src="/image_1.png"
               alt="image"
