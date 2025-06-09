@@ -49,7 +49,7 @@ const PublicLayout = () => {
       </main>
 
       {/* Footer */}
-      <footer className=" text-white p-4 ">
+      <footer className=" text-white">
         <Footer />
       </footer>
     </div>
