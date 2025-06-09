@@ -14,7 +14,7 @@ const useHeadingGroupAnimation = (ref: any, delay: number) => {
         scrollTrigger: {
           trigger: ref.current,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "restart none none none",
         },
         delay,
       });
