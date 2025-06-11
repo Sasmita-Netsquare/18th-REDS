@@ -44,12 +44,16 @@ const SignatureMeetings = () => {
     <div className="main-container text-white py-16">
       <div className="flex flex-col gap-6">
         <SectionTitle title="Signature" subtitle="Meetings" ref={headRef} />
-        <div className="flex lg:flex-row flex-col gap-4">
+        <div className="flex lg:flex-row flex-col gap-4 ">
           {/* Image Animation Wrapper */}
-          <div className=" w-full flex md:flex-row flex-col gap-2 overflow-hidden lg:max-h-[500px] md:max-h-[500px] max-h-[800px]">
-            {/* Left Column */}
-            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden ">
-              <div ref={leftContainerRef} className="flex flex-col gap-2">
+          <div className="w-full flex md:flex-row flex-col gap-2 overflow-hidden lg:max-h-[800px] md:max-h-[500px] max-h-[800px]">
+            <div className="flex flex-col gap-2 w-full h-[650px] overflow-hidden relative">
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
+              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
+              <div
+                ref={leftContainerRef}
+                className="flex flex-col gap-2 relative z-0"
+              >
                 <div className="lg:w-80 w-full h-auto overflow-hidden">
                   <img
                     src="/meeting_1.png"
@@ -67,9 +71,12 @@ const SignatureMeetings = () => {
               </div>
             </div>
 
-            {/* Right Column */}
-            <div className="flex flex-col gap-2 w-full h-[500px] overflow-hidden">
-              <div ref={rightContainerRef} className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-full h-[650px] mt-12 overflow-hidden relative">
+              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
+              <div
+                ref={rightContainerRef}
+                className="flex flex-col gap-2 relative z-0"
+              >
                 <div className="lg:w-80 w-full h-auto overflow-hidden">
                   <img
                     src="/meeting_2.png"
@@ -85,9 +92,10 @@ const SignatureMeetings = () => {
                   />
                 </div>
               </div>
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
             </div>
           </div>
-          <div className=" w-full" ref={containerRef}>
+          <div className=" w-full mt-10" ref={containerRef}>
             <p className="leading-relaxed text-gray-300 lg:w-[75%] sm:w-full">
               The key offering of Summits organized by GBB are the pre-arranged,
               diligently curated B2B meetings scheduled for the delegates and
