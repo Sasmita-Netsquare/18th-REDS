@@ -15,7 +15,7 @@ export default function HeroSection() {
   useHeadingGroupAnimation(headRef, 1);
   // Delay the animation for infoRef
   // setTimeout(() => {
-  useHeadingGroupAnimation(infoRef, 1.5);
+  useHeadingGroupAnimation(infoRef, 1.3);
   // }, 2000);
 
   useEffect(() => {
