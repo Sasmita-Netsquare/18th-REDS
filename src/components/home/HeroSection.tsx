@@ -7,16 +7,13 @@ import { useHeadingGroupAnimation } from "../hooks";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
-  const infoRef = useRef(null);
-  const headRef = useRef(null);
+  const leftRef = useRef<HTMLSpanElement>(null);
+  const rightRef = useRef<HTMLSpanElement>(null);
+  const infoRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef<HTMLDivElement>(null);
 
-  useHeadingGroupAnimation(headRef, 1);
-  // Delay the animation for infoRef
-  // setTimeout(() => {
-  useHeadingGroupAnimation(infoRef, 1.3);
-  // }, 2000);
+  useHeadingGroupAnimation(headRef, 1.2);
+  useHeadingGroupAnimation(infoRef, 1.2);
 
   useEffect(() => {
     // Animate the title words on scroll
@@ -48,7 +45,7 @@ export default function HeroSection() {
     <>
       <div className="main-container lg:py-10 md:pb-6 pb-4" id="hero">
         <div className="text-center" ref={headRef}>
-          <h1 className="lg:text-9xl md:text-6xl text-4xl flex justify-center lg:space-x-6 md:space-x-4 space-x-2 lg:mt-40 mt-30">
+          <h1 className="lg:text-9xl md:text-6xl text-4xl flex justify-center lg:space-x-6 md:space-x-4 space-x-2 lg:mt-40 mt-32">
             <span ref={leftRef}>Africa</span>
             <span ref={rightRef}>Risen</span>
           </h1>

@@ -61,7 +61,7 @@ const PastPartners = () => {
       <div className="flex md:justify-end lg:justify-end my-2 pb-3 md:pr-1 sm:justify-center">
         <p className="text-white text-right text-2xl">Summit Partners</p>
       </div>
-      <div className="w-full flex justify-end overflow-hidden pb-6">
+      <div className="w-full flex justify-end overflow-hidden pb-6 px-[0.05rem]">
         <div className="lg:w-[75%] overflow-hidden">
           <div ref={leftRowRef} className="flex gap-1 mb-4 w-max ">
             {topLogos.map((item, index) => (
@@ -100,7 +100,7 @@ const PastPartners = () => {
           Media Association Partners
         </p>
       </div>
-      <div className="w-full flex justify-end overflow-hidden">
+      <div className="w-full flex justify-end overflow-hidden px-[0.05rem]">
         <div className="lg:w-[75%] overflow-hidden">
           <div ref={leftCopyRef} className="flex gap-1 mb-4 w-max ">
             {topLogos.map((item, index) => (
