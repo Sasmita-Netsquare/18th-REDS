@@ -4,28 +4,26 @@ import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useHeadingGroupAnimation = (ref: any, delay: number) => {
+const useHeadingGroupAnimation = (ref:any, delay: number) => {
   useEffect(() => {
     if (ref.current) {
-      const lines = Array.from(ref.current.children); 
+      const lines = Array.from(ref.current.children);
 
-      // Set initial state
       gsap.set(lines, { y: 60, opacity: 0 });
 
-      // Animate
       gsap.timeline({
         scrollTrigger: {
           trigger: ref.current,
-          start: "top 90%",
-          toggleActions: "restart none restart none",
+          start: "top 80%",
+          toggleActions: "restart none none none",
         },
         delay,
       }).to(lines, {
-        y: -10,
+        y: 0,
         opacity: 1,
-        duration: 1.2,         
-        ease: "power2.out", 
-        stagger: 0.12,         
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.12,
       });
     }
   }, [ref, delay]);
