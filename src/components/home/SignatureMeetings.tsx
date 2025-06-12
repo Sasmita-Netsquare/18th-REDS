@@ -12,7 +12,7 @@ const SignatureMeetings = () => {
 
   const leftContainerRef = useRef<HTMLDivElement>(null);
   const rightContainerRef = useRef<HTMLDivElement>(null);
-  useMarqueeAnimation(leftContainerRef, rightContainerRef, "y", 15);
+  useMarqueeAnimation(leftContainerRef, rightContainerRef, "y", 30);
 
   useEffect(() => {
     if (!containerRef.current) return;
