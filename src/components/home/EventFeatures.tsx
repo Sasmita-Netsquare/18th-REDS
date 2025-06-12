@@ -68,7 +68,7 @@ const EventFeatures = () => {
               ${isInView ? "animate-reveal-left-to-right" : "opacity-0"}
             `}
               />
-              <div className="absolute bottom-2 left-2 text-sm sm:text-base font-medium bg-black bg-opacity-50 px-3 py-1 rounded">
+              <div className="absolute bottom-2 left-2 text-sm sm:text-base font-medium bg-opacity-50 px-3 py-1 rounded font-size:xl ">
                 {feature.title}
               </div>
             </div>
