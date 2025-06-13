@@ -64,7 +64,7 @@ const PastSpeakers = () => {
 
         container.scrollTo({ left: 0 }); 
       }, 500);
-    }, 2000); 
+    }, 1500); 
 
     return () => clearInterval(interval);
   }, [clonedSpeakers]);
