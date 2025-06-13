@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useHeadingGroupAnimation } from "../hooks";
+import { useInView } from "../hooks/useInView";
 import SectionTitle from "./SectionTitle";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -11,6 +12,7 @@ const Gallery = () => {
   const headRef = useRef(null);
   const smootherRef = useRef<ScrollSmoother | null>(null);
   useHeadingGroupAnimation(headRef, 0.1);
+  const { ref, isInView } = useInView({ threshold: 0.3 });
 
   // Refs for each column
   const col1Ref = useRef(null);
@@ -61,7 +63,7 @@ const Gallery = () => {
 
   return (
       <div >
-        <div className="main-container pt-16">
+        <div className="main-container pt-16" ref={ref}>
           {/* Header */}
           <SectionTitle title="Photos" subtitle="Gallery" ref={headRef} />
           {/* Gallery Grid */}
@@ -72,28 +74,36 @@ const Gallery = () => {
                 <img
                   src="/image_1.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
               <div className="h-[19rem] w-full">
                 <img
                   src="/image_2.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
               <div className="h-[19rem] w-full">
                 <img
                   src="/image_1.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
               <div className="h-[19rem] w-full">
                 <img
                   src="/image_2.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
             </div>
@@ -104,21 +114,27 @@ const Gallery = () => {
                 <img
                   src="/image_2.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
               <div className="h-[26rem] w-full">
                 <img
                   src="/image_1.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
               <div className="h-[26rem] w-full">
                 <img
                   src="/image_2.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
             </div>
@@ -129,21 +145,27 @@ const Gallery = () => {
                 <img
                   src="/image_1.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
               <div className="h-[24rem] w-full">
                 <img
                   src="/image_2.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
               <div className="h-[24rem] w-full">
                 <img
                   src="/image_1.png"
                   alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                }`}
                 />
               </div>
             </div>
