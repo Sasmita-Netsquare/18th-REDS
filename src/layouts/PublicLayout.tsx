@@ -46,9 +46,7 @@ const PublicLayout = () => {
 
   return (
     <div id="smooth-wrapper">
-      <div id="smooth-content" className="flex flex-col">
-        {/* Header */}
-        <header className="bg-black text-white flex justify-center items-center fixed top-0 w-full z-50">
+       <header className="bg-black text-white flex justify-center items-center fixed top-0 w-full z-50">
           <div
             ref={headerInnerRef}
             className="transition-all duration-1000 ease-in-out"
@@ -57,7 +55,7 @@ const PublicLayout = () => {
             <Header />
           </div>
         </header>
-
+      <div id="smooth-content" className="flex flex-col">
         {/* Main content */}
         <main className="flex-1">
           <Outlet />
