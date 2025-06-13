@@ -20,7 +20,7 @@ const EventFeatures = () => {
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
 
-  const { ref, isInView } = useInView({ threshold: 0.3 });
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   // Column refs
   const col1Ref = useRef(null);

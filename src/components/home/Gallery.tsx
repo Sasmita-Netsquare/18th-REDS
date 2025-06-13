@@ -12,7 +12,7 @@ const Gallery = () => {
   const headRef = useRef(null);
   const smootherRef = useRef<ScrollSmoother | null>(null);
   useHeadingGroupAnimation(headRef, 0.1);
-  const { ref, isInView } = useInView({ threshold: 0.3 });
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   // Refs for each column
   const col1Ref = useRef(null);
