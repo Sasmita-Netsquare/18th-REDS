@@ -146,13 +146,6 @@ const Gallery = () => {
                   className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
                 />
               </div>
-              <div className="h-[24rem] w-full">
-                <img
-                  src="/image_2.png"
-                  alt="image"
-                  className="h-full w-full object-cover delay-animation animate-reveal-left-to-right"
-                />
-              </div>
             </div>
           </div>
         </div>
