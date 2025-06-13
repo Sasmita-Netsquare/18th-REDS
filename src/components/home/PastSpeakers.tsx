@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
 
@@ -37,34 +37,37 @@ const PastSpeakers = () => {
   ];
 
   const scrollRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
+
+  const [clonedSpeakers, setClonedSpeakers] = useState(speakerArr);
 
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
 
-    let currentIndex = 0;
+    const interval = setInterval(() => {
+      const firstChild = container.querySelector(".speaker-card");
+      if (!firstChild) return;
 
-    const scroll = () => {
-      const speakerCards = container.querySelectorAll(".speaker-card");
-      if (speakerCards.length === 0) return;
+      const cardWidth = firstChild.getBoundingClientRect().width + 20; // Including gap
 
-      const card = speakerCards[0] as HTMLElement;
-      const cardWidth = card.offsetWidth + 20; // add 20px gap
-
-      currentIndex = (currentIndex + 1) % speakerArr.length;
-
-      container.scrollTo({
-        left: cardWidth * currentIndex,
+      container.scrollBy({
+        left: cardWidth,
         behavior: "smooth",
       });
-    };
 
-    const interval = setInterval(scroll, 1000); // every 3 seconds
+      setTimeout(() => {
+        const first = clonedSpeakers[0];
+        const rest = clonedSpeakers.slice(1);
+        setClonedSpeakers([...rest, first]);
+
+        container.scrollTo({ left: 0 }); 
+      }, 500);
+    }, 2000); 
+
     return () => clearInterval(interval);
-  }, []);
+  }, [clonedSpeakers]);
 
   return (
     <div className="main-container py-16 flex flex-col gap-5">
@@ -72,19 +75,18 @@ const PastSpeakers = () => {
       <div className="flex justify-end items-end overflow-hidden lg:ml-22 md:px-[2px]">
         <div
           ref={scrollRef}
-          className="flex gap-5 w-full lg:w-[80%] overflow-x-auto scroll-smooth no-scrollbar"
+          className="flex gap-5 w-full lg:w-[80%] overflow-x-hidden"
         >
-          {speakerArr.map((speaker, index) => (
+          {clonedSpeakers.map((speaker, index) => (
             <div
               key={index}
-              ref={cardRef}
-              className="speaker-card min-w-[calc(25%-1.25rem)] flex-shrink-0"
+              className="speaker-card min-w-[250px] flex-shrink-0"
             >
               <div className="border-4 border-yellow-500 aspect-square mb-2">
                 <img
                   src={speaker.image}
                   alt={speaker.name}
-                  className="w-68 h-auto object-cover"
+                  className="w-full h-[250px] object-cover"
                 />
               </div>
               <p className="text-white font-semibold">{speaker.name}</p>
