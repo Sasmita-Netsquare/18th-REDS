@@ -61,7 +61,7 @@ const Gallery = () => {
 
   return (
       <div >
-        <div className="main-container py-16 min-h-[150vh]">
+        <div className="main-container pt-16">
           {/* Header */}
           <SectionTitle title="Photos" subtitle="Gallery" ref={headRef} />
           {/* Gallery Grid */}
