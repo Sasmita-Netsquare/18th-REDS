@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
 
-const PastSpeakers = () => {
   const speakerArr = [
     {
       image: "/speaker1.jpg",
@@ -35,6 +34,8 @@ const PastSpeakers = () => {
       company: "Giga Projects",
     },
   ];
+
+const PastSpeakers = () => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const headRef = useRef(null);
