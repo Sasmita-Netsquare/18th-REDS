@@ -8,6 +8,19 @@ import SectionTitle from "./SectionTitle";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+const features = [
+  {image : "/image_1.png" },
+  {image : "/image_2.png" },
+  {image : "/image_1.png" },
+  {image : "/image_2.png" },
+  {image : "/image_2.png" },
+  {image : "/image_1.png" },
+  {image : "/image_2.png" },
+  {image : "/image_1.png" },
+  {image : "/image_2.png" },
+  {image : "/image_1.png" },
+]
+
 const Gallery = () => {
   const headRef = useRef(null);
   const smootherRef = useRef<ScrollSmoother | null>(null);
@@ -61,6 +74,10 @@ const Gallery = () => {
     };
   }, []);
 
+  const col1Features = [features[0], features[1], features[2], features[3]];
+  const col2Features = [features[4], features[5], features[6]];
+  const col3Features = [features[7], features[8], features[9]];
+
   return (
       <div >
         <div className="main-container pt-16" ref={ref}>
@@ -70,104 +87,53 @@ const Gallery = () => {
           <div className="flex gap-1 mt-15 gap-4">
             {/* Column 1 */}
             <div className="flex flex-col gap-4 w-1/3 will-change-transform" ref={col1Ref}>
-              <div className="h-[19rem] w-full">
-                <img
-                  src="/image_1.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
-              <div className="h-[19rem] w-full">
-                <img
-                  src="/image_2.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
-              <div className="h-[19rem] w-full">
-                <img
-                  src="/image_1.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
-              <div className="h-[19rem] w-full">
-                <img
-                  src="/image_2.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
+            {
+              col1Features.map((feature, index) => (
+                <div key={index} className="h-[19rem] w-full">
+                  <img
+                    src={feature.image}
+                    alt="image"
+                    className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                    isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                  }`}
+                  />
+                </div>
+              ))
+            }
             </div>
 
             {/* Column 2 with adjusted margin */}
             <div className="flex flex-col gap-4 w-1/3 mt-20 will-change-transform"  ref={col2Ref}>
-              <div className="h-[26rem] w-full">
-                <img
-                  src="/image_2.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
-              <div className="h-[26rem] w-full">
-                <img
-                  src="/image_1.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
-              <div className="h-[26rem] w-full">
-                <img
-                  src="/image_2.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
+            {
+              col2Features.map((feature, index) => (
+                <div key={index} className="h-[26rem] w-full">
+                  <img
+                    src={feature.image}
+                    alt="image"
+                    className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                    isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                  }`}
+                  />
+                </div>
+              ))
+            }
             </div>
 
             {/* Column 3 */}
             <div className="flex flex-col gap-4 w-1/3 mt-10 will-change-transform"  ref={col3Ref}>
-              <div className="h-[24rem] w-full">
-                <img
-                  src="/image_1.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
-              <div className="h-[24rem] w-full">
-                <img
-                  src="/image_2.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
-              <div className="h-[24rem] w-full">
-                <img
-                  src="/image_1.png"
-                  alt="image"
-                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                  isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                }`}
-                />
-              </div>
+            {
+              col3Features.map((feature, index) => (
+                <div key={index} className="h-[24rem] w-full">
+                  <img
+                    src={feature.image}
+                    alt="image"
+                    className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                    isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                  }`}
+                  />
+                </div>
+              ))
+            }
             </div>
           </div>
         </div>
