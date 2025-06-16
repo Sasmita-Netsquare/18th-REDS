@@ -64,7 +64,7 @@ const PastSpeakers = () => {
         setClonedSpeakers([...rest, first]);
 
         container.scrollTo({ left: 0 }); 
-      }, 500);
+      }, 350);
     }, 1500); 
 
     return () => clearInterval(interval);
@@ -76,18 +76,19 @@ const PastSpeakers = () => {
       <div className="flex justify-end items-end overflow-hidden lg:ml-22 md:px-[2px]">
         <div
           ref={scrollRef}
-          className="flex gap-5 w-full lg:w-[80%] overflow-x-hidden justify-center lg:justify-start md:justify-center"
+          className="flex gap-5 w-full lg:w-[80%] overflow-x-hidden justify-center lg:justify-start lg:mx-0  md:justify-center md:mx-0 mx-2"
         >
           {clonedSpeakers.map((speaker, index) => (
             <div
               key={index}
-              className="speaker-card min-w-[250px] flex-shrink-0"
+              className="speaker-card min-w-[250px] flex-shrink-0 snap-center"
             >
-              <div className="border-4 border-yellow-500 aspect-square mb-2">
+              <div className="border-4 border-yellow-500 w-[250px] h-[250px] mb-2">
                 <img
                   src={speaker.image}
                   alt={speaker.name}
-                  className="w-full h-[250px] object-cover"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <p className="text-white font-semibold">{speaker.name}</p>
