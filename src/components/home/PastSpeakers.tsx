@@ -76,7 +76,7 @@ const PastSpeakers = () => {
       <div className="flex justify-end items-end overflow-hidden lg:ml-22 md:px-[2px]">
         <div
           ref={scrollRef}
-          className="flex gap-5 w-full lg:w-[80%] overflow-x-hidden"
+          className="flex gap-5 w-full lg:w-[80%] overflow-x-hidden justify-center lg:justify-start md:justify-center"
         >
           {clonedSpeakers.map((speaker, index) => (
             <div
