@@ -9,17 +9,17 @@ import SectionTitle from "./SectionTitle";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const features = [
-  {image : "/image_1.png" },
-  {image : "/image_2.png" },
-  {image : "/image_1.png" },
-  {image : "/image_2.png" },
-  {image : "/image_2.png" },
-  {image : "/image_1.png" },
-  {image : "/image_2.png" },
-  {image : "/image_1.png" },
-  {image : "/image_2.png" },
-  {image : "/image_1.png" },
-]
+  { image: "/image_1.png" },
+  { image: "/image_2.png" },
+  { image: "/image_1.png" },
+  { image: "/image_2.png" },
+  { image: "/image_2.png" },
+  { image: "/image_1.png" },
+  { image: "/image_2.png" },
+  { image: "/image_1.png" },
+  { image: "/image_2.png" },
+  { image: "/image_1.png" },
+];
 
 const Gallery = () => {
   const headRef = useRef(null);
@@ -79,65 +79,81 @@ const Gallery = () => {
   const col3Features = [features[7], features[8], features[9]];
 
   return (
-      <div >
-        <div className="main-container pt-16" ref={ref}>
-          {/* Header */}
-          <SectionTitle title="Photos" subtitle="Gallery" ref={headRef} />
-          {/* Gallery Grid */}
-          <div className="flex gap-1 mt-15 gap-4">
-            {/* Column 1 */}
-            <div className="flex flex-col gap-4 w-1/3 will-change-transform" ref={col1Ref}>
-            {
-              col1Features.map((feature, index) => (
-                <div key={index} className="h-[19rem] w-full">
-                  <img
-                    src={feature.image}
-                    alt="image"
-                    className={`h-full w-full object-cover opacity-80 delay-animation] ${
+    <div>
+      <div className="main-container pt-16" ref={ref}>
+        {/* Header */}
+        <SectionTitle title="Photos" subtitle="Gallery" ref={headRef} />
+        {/* Gallery Grid */}
+        <div className="flex gap-1 mt-15 gap-4">
+          {/* Column 1 */}
+          <div
+            className="flex flex-col gap-4 w-1/3 will-change-transform"
+            ref={col1Ref}
+          >
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
+            {col1Features.map((feature, index) => (
+              <div key={index} className="h-[19rem] w-full relative">
+                <img
+                  src={feature.image}
+                  alt="image"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
                     isInView ? "animate-reveal-left-to-right" : "opacity-0"
                   }`}
-                  />
-                </div>
-              ))
-            }
-            </div>
+                />
 
-            {/* Column 2 with adjusted margin */}
-            <div className="flex flex-col gap-4 w-1/3 mt-20 will-change-transform"  ref={col2Ref}>
-            {
-              col2Features.map((feature, index) => (
-                <div key={index} className="h-[26rem] w-full">
-                  <img
-                    src={feature.image}
-                    alt="image"
-                    className={`h-full w-full object-cover opacity-80 delay-animation] ${
-                    isInView ? "animate-reveal-left-to-right" : "opacity-0"
-                  }`}
-                  />
-                </div>
-              ))
-            }
-            </div>
+                {index === col1Features.length - 1 && (
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent z-10"></div>
+                )}
+              </div>
+            ))}
+          </div>
 
-            {/* Column 3 */}
-            <div className="flex flex-col gap-4 w-1/3 mt-10 will-change-transform"  ref={col3Ref}>
-            {
-              col3Features.map((feature, index) => (
-                <div key={index} className="h-[24rem] w-full">
-                  <img
-                    src={feature.image}
-                    alt="image"
-                    className={`h-full w-full object-cover opacity-80 delay-animation] ${
+          {/* Column 2 with adjusted margin */}
+          <div
+            className="flex flex-col gap-4 w-1/3 mt-20 will-change-transform"
+            ref={col2Ref}
+          >
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
+            {col2Features.map((feature, index) => (
+              <div key={index} className="h-[26rem] w-full relative">
+                <img
+                  src={feature.image}
+                  alt="image"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
                     isInView ? "animate-reveal-left-to-right" : "opacity-0"
                   }`}
-                  />
-                </div>
-              ))
-            }
-            </div>
+                />
+                {index === col2Features.length - 1 && (
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent z-10"></div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Column 3 */}
+          <div
+            className="flex flex-col gap-4 w-1/3 mt-10 will-change-transform"
+            ref={col3Ref}
+          >
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
+            {col3Features.map((feature, index) => (
+              <div key={index} className="h-[24rem] w-full relative">
+                <img
+                  src={feature.image}
+                  alt="image"
+                  className={`h-full w-full object-cover opacity-80 delay-animation] ${
+                    isInView ? "animate-reveal-left-to-right" : "opacity-0"
+                  }`}
+                />
+                {index === col3Features.length - 1 && (
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent z-10"></div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
+    </div>
   );
 };
 

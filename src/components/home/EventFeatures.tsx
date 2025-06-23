@@ -77,11 +77,11 @@ const EventFeatures = () => {
                   isInView ? "animate-reveal-left-to-right" : "opacity-0"
                 }`}
               />
-              <div className="absolute bottom-2 left-2 text-sm sm:text-base font-medium bg-opacity-50 px-3 py-1 rounded color-white">
+              <div className="absolute bottom-2 left-2 text-sm  sm:text-base font-medium bg-opacity-50 px-3 py-1 rounded">
                 {feature.title}
               </div>
               {index === col1Features.length - 1 && (
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black to-transparent z-10"></div>
               )}
             </div>
           ))}
@@ -108,7 +108,7 @@ const EventFeatures = () => {
                 {feature.title}
               </div>
               {index === col2Features.length - 1 && (
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black to-transparent z-10"></div>
               )}
             </div>
           ))}
