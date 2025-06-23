@@ -61,37 +61,55 @@ const EventFeatures = () => {
       <SectionTitle title="Event" subtitle="Features" ref={headRef} />
       <div className="flex gap-4 mt-12">
         {/* Column 1 */}
-        <div className="flex flex-col gap-4 w-1/2 will-change-transform" ref={col1Ref}>
+        <div
+          className="flex flex-col gap-4 w-1/2 will-change-transform"
+          ref={col1Ref}
+        >
+          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
           {col1Features.map((feature, index) => (
             <div className="relative h-[22rem] w-full" key={`col1-${index}`}>
               <img
                 src={feature.image}
                 alt={feature.title}
-                className={`h-full w-full object-cover opacity-80 delay-[${index * 200}ms] ${
+                className={`h-full w-full object-cover opacity-80 delay-[${
+                  index * 200
+                }ms] ${
                   isInView ? "animate-reveal-left-to-right" : "opacity-0"
                 }`}
               />
-              <div className="absolute bottom-2 left-2 text-sm sm:text-base font-medium bg-opacity-50 px-3 py-1 rounded">
+              <div className="absolute bottom-2 left-2 text-sm sm:text-base font-medium bg-opacity-50 px-3 py-1 rounded color-white">
                 {feature.title}
               </div>
+              {index === col1Features.length - 1 && (
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
+              )}
             </div>
           ))}
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col gap-4 w-1/2 mt-20 will-change-transform" ref={col2Ref}>
+        <div
+          className="flex flex-col gap-4 w-1/2 mt-20 will-change-transform"
+          ref={col2Ref}
+        >
+          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
           {col2Features.map((feature, index) => (
             <div className="relative h-[22rem] w-full" key={`col2-${index}`}>
               <img
                 src={feature.image}
                 alt={feature.title}
-                className={`h-full w-full object-cover opacity-80 delay-[${index * 200 + 100}ms] ${
+                className={`h-full w-full object-cover opacity-80 delay-[${
+                  index * 200 + 100
+                }ms] ${
                   isInView ? "animate-reveal-left-to-right" : "opacity-0"
                 }`}
               />
               <div className="absolute bottom-2 left-2 text-sm sm:text-base font-medium bg-opacity-50 px-3 py-1 rounded">
                 {feature.title}
               </div>
+              {index === col2Features.length - 1 && (
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
+              )}
             </div>
           ))}
         </div>
