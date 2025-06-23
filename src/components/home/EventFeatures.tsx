@@ -28,7 +28,7 @@ const EventFeatures = () => {
 
   useEffect(() => {
     gsap.to(col1Ref.current, {
-      yPercent: -5,
+      yPercent: -10,
       ease: "none",
       scrollTrigger: {
         trigger: col1Ref.current,
@@ -38,7 +38,7 @@ const EventFeatures = () => {
     });
 
     gsap.to(col2Ref.current, {
-      yPercent: -20,
+      yPercent: -30,
       ease: "none",
       scrollTrigger: {
         trigger: col2Ref.current,
