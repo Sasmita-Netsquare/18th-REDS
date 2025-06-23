@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
+import { usePinScroll } from "../hooks/usePinScroll";
 
 const testimonials = [
   {
@@ -25,6 +26,8 @@ const Testimonials = () => {
   const [index, setIndex] = useState(0);
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
+  const pinRef = useRef<HTMLDivElement>(null!);
+  usePinScroll(pinRef, { endOffset: 235 });
 
   const handlePrev = () => {
     setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -37,7 +40,15 @@ const Testimonials = () => {
   return (
     <div className="main-container pt-16">
       <section>
-        <SectionTitle title="Client" subtitle="Testimonials" ref={headRef} />
+        <div className="relative">
+          <div ref={pinRef}>
+            <SectionTitle
+              title="Client"
+              subtitle="Testimonials"
+              ref={headRef}
+            />
+          </div>
+        </div>
       </section>
       <div className="flex justify-end w-full pb-16">
         <div className="w-full lg:w-[75%] flex flex-col gap-10">
@@ -60,7 +71,7 @@ const Testimonials = () => {
           </div>
 
           {/* Testimonials */}
-          <div className="grid md:grid-cols-2 gap-3">
+          <div className="grid md:grid-cols-2 gap-3 pl-13">
             {[
               testimonials[index], // always show this one
               ...(window.innerWidth >= 768

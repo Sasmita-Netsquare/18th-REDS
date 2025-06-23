@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
+import { usePinScroll } from "../hooks/usePinScroll"; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,11 +57,19 @@ const EventNumbers: React.FC = () => {
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
 
+  const pinRef = useRef<HTMLDivElement>(null!);
+  usePinScroll(pinRef, { endOffset: 485 }); 
+
   return (
     <div className="main-container flex items-center justify-center py-16">
-      <div className="grid lg:grid-cols-2 grid-cols-1 w-full ">
+      <div className="grid lg:grid-cols-2 grid-cols-1 w-full relative">
         {/* Left Section */}
-        <SectionTitle title="Event by" subtitle="Numbers" ref={headRef} />
+        <div className="relative">
+          <div ref={pinRef}>
+            <SectionTitle title="Event by" subtitle="Numbers" ref={headRef} />
+          </div>
+        </div>
+
         {/* Right Section - Stats Grid */}
         <div className="text-white flex items-center justify-center border-4 border-[#1c1c1e] lg:mt-36 md:mt-5 mt-5">
           <div className="grid grid-cols-3 grid-rows-3 max-w-3xl w-full">

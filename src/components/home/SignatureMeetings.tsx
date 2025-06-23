@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
+import { usePinScroll } from "../hooks/usePinScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 const SignatureMeetings = () => {
@@ -13,6 +14,10 @@ const SignatureMeetings = () => {
   const leftContainerRef = useRef<HTMLDivElement>(null);
   const rightContainerRef = useRef<HTMLDivElement>(null);
   useMarqueeAnimation(leftContainerRef, rightContainerRef, "y", 30);
+
+  const pinRef = useRef<HTMLDivElement>(null!);
+  usePinScroll(pinRef, { endOffset: 100 }); 
+  
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -95,7 +100,8 @@ const SignatureMeetings = () => {
               <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
             </div>
           </div>
-          <div className=" w-full mt-10" ref={containerRef}>
+          <div className=" w-full mt-10 " ref={containerRef}>
+            <div ref={pinRef}>
             <p className="leading-relaxed text-gray-300 lg:w-[75%] sm:w-full">
               The key offering of Summits organized by GBB are the pre-arranged,
               diligently curated B2B meetings scheduled for the delegates and
@@ -111,6 +117,7 @@ const SignatureMeetings = () => {
               while leaving each attendee with long-term and valuable business
               network.
             </p>
+            </div>
           </div>
         </div>
       </div>

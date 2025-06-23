@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
+import { usePinScroll } from "../hooks/usePinScroll";
 
 const PastPartners = () => {
   const mediaPartners = [
@@ -50,13 +51,19 @@ const PastPartners = () => {
   const rightRowRef = useRef<HTMLDivElement>(null);
   const leftCopyRef = useRef<HTMLDivElement>(null);
   const RowCopyRef = useRef<HTMLDivElement>(null);
+  const pinRef = useRef<HTMLDivElement>(null!);
+  usePinScroll(pinRef, { endOffset: 530 });
 
   useMarqueeAnimation(leftRowRef, rightRowRef, "x", 30);
   useMarqueeAnimation(leftCopyRef, RowCopyRef, "x", 30);
 
   return (
     <div className="main-container py-16">
-      <SectionTitle title="Our Past" subtitle="Partners" ref={headRef} />
+      <div className="relative">
+        <div ref={pinRef}>
+          <SectionTitle title="Our Past" subtitle="Partners" ref={headRef} />
+        </div>
+      </div>
       {/* Summit Partners */}
       <div className="flex md:justify-end lg:justify-end my-2 pb-3 md:pr-1 sm:justify-center">
         <p className="text-white text-right text-2xl">Summit Partners</p>
