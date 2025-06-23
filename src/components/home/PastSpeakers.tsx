@@ -1,47 +1,87 @@
 import { useEffect, useRef, useState } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
+import { usePinScroll } from "../hooks/usePinScroll";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-  const speakerArr = [
-    {
-      image: "/speaker1.jpg",
-      name: "Mark Kennedy",
-      title: "Head of Design",
-      company: "MAGNA – NEOM",
-    },
-    {
-      image: "/speaker2.jpg",
-      name: "Jane Doe",
-      title: "Chief Architect",
-      company: "RedSea Global",
-    },
-    {
-      image: "/speaker3.jpg",
-      name: "Ali Mohammed",
-      title: "Lead Engineer",
-      company: "Saudi Vision",
-    },
-    {
-      image: "/speaker4.jpg",
-      name: "Sara Smith",
-      title: "Innovation Officer",
-      company: "NEOM",
-    },
-    {
-      image: "/speaker5.jpg",
-      name: "John Wilson",
-      title: "CEO",
-      company: "Giga Projects",
-    },
-  ];
+const speakerArr = [
+  {
+    image: "/speaker1.jpg",
+    name: "Mark Kennedy",
+    title: "Head of Design",
+    company: "MAGNA – NEOM",
+  },
+  {
+    image: "/speaker2.jpg",
+    name: "Jane Doe",
+    title: "Chief Architect",
+    company: "RedSea Global",
+  },
+  {
+    image: "/speaker3.jpg",
+    name: "Ali Mohammed",
+    title: "Lead Engineer",
+    company: "Saudi Vision",
+  },
+  {
+    image: "/speaker4.jpg",
+    name: "Sara Smith",
+    title: "Innovation Officer",
+    company: "NEOM",
+  },
+  {
+    image: "/speaker5.jpg",
+    name: "John Wilson",
+    title: "CEO",
+    company: "Giga Projects",
+  },
+];
 
 const PastSpeakers = () => {
-
   const scrollRef = useRef<HTMLDivElement>(null);
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
+  const pinRef = useRef<HTMLDivElement>(null!);
+  usePinScroll(pinRef, { endOffset: 275 });
 
   const [clonedSpeakers, setClonedSpeakers] = useState(speakerArr);
+
+  const handlePrev = () => {
+     const container = scrollRef.current;
+  if (!container) return;
+
+  const firstChild = container.querySelector(".speaker-card") as HTMLElement;
+  if (!firstChild) return;
+
+  const cardWidth = firstChild.getBoundingClientRect().width + 20;
+  container.scrollBy({ left: -cardWidth, behavior: "smooth" });
+  setTimeout(() => {
+    const last = clonedSpeakers[clonedSpeakers.length - 1];
+    const rest = clonedSpeakers.slice(0, -1);
+    setClonedSpeakers([last, ...rest]);
+
+    container.scrollTo({ left: 0 });
+  }, 350);
+  };
+
+  const handleNext = () => {
+  const container = scrollRef.current;
+  if (!container) return;
+
+  const firstChild = container.querySelector(".speaker-card") as HTMLElement;
+  if (!firstChild) return;
+
+  const cardWidth = firstChild.getBoundingClientRect().width + 20;
+
+  container.scrollBy({ left: cardWidth, behavior: "smooth" });
+  setTimeout(() => {
+    const first = clonedSpeakers[0];
+    const rest = clonedSpeakers.slice(1);
+    setClonedSpeakers([...rest, first]);
+
+    container.scrollTo({ left: 0 });
+  }, 350);    
+  };
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -63,16 +103,37 @@ const PastSpeakers = () => {
         const rest = clonedSpeakers.slice(1);
         setClonedSpeakers([...rest, first]);
 
-        container.scrollTo({ left: 0 }); 
+        container.scrollTo({ left: 0 });
       }, 350);
-    }, 1500); 
+    }, 1500);
 
     return () => clearInterval(interval);
   }, [clonedSpeakers]);
 
   return (
     <div className="main-container py-16 flex flex-col gap-5">
-      <SectionTitle title="Our Past" subtitle="Speakers" ref={headRef} />
+      <div className="relative">
+        <div ref={pinRef}>
+          <SectionTitle title="Our Past" subtitle="Speakers" ref={headRef} />
+        </div>
+      </div>
+      <div className="flex justify-center items-center gap-4 sm:gap-12 ml-[22rem]">
+        <div className="flex gap-2">
+          <button
+            onClick={handlePrev}
+            className="bg-[#1c1d1f] p-3 cursor-pointer"
+          >
+            <FaArrowLeft className="text-yellow-600" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="bg-[#1c1d1f] p-3 cursor-pointer"
+          >
+            <FaArrowRight className="text-yellow-600" />
+          </button>
+        </div>
+      </div>
+
       <div className="flex justify-end items-end overflow-hidden lg:ml-22 md:px-[2px]">
         <div
           ref={scrollRef}
