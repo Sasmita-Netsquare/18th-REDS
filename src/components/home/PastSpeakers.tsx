@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
-import { usePinScroll } from "../hooks/usePinScroll";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import useIsDesktop from "../hooks/useIsDesktop";
 
 const speakerArr = [
   {
@@ -42,9 +40,6 @@ const PastSpeakers = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
-  const pinRef = useRef<HTMLDivElement>(null!);
-  const isDesktop = useIsDesktop(1024);
-  usePinScroll(pinRef, { endOffset: 275, disabled: !isDesktop });
 
   const [clonedSpeakers, setClonedSpeakers] = useState(speakerArr);
 
@@ -114,11 +109,7 @@ const PastSpeakers = () => {
 
   return (
     <div className="main-container py-16 flex flex-col gap-5">
-      <div className="relative">
-        <div ref={pinRef}>
           <SectionTitle title="Our Past" subtitle="Speakers" ref={headRef} />
-        </div>
-      </div>
       <div className="flex lg:justify-end md:justify-end justify-center items-center gap-4 sm:gap-12">
         <div className="flex gap-2">
           <button
