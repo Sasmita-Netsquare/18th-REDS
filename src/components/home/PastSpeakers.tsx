@@ -119,7 +119,7 @@ const PastSpeakers = () => {
           <SectionTitle title="Our Past" subtitle="Speakers" ref={headRef} />
         </div>
       </div>
-      <div className="flex justify-end items-center gap-4 sm:gap-12">
+      <div className="flex lg:justify-end md:justify-end justify-center items-center gap-4 sm:gap-12">
         <div className="flex gap-2">
           <button
             onClick={handlePrev}
