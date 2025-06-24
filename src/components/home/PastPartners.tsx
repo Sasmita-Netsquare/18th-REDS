@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
 import { usePinScroll } from "../hooks/usePinScroll";
+import useIsDesktop from "../hooks/useIsDesktop";
 
 const PastPartners = () => {
   const mediaPartners = [
@@ -52,7 +53,8 @@ const PastPartners = () => {
   const leftCopyRef = useRef<HTMLDivElement>(null);
   const RowCopyRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null!);
-  usePinScroll(pinRef, { endOffset: 530 });
+  const isDesktop = useIsDesktop(1024);
+  usePinScroll(pinRef, { endOffset: 530, disabled: !isDesktop });
 
   useMarqueeAnimation(leftRowRef, rightRowRef, "x", 30);
   useMarqueeAnimation(leftCopyRef, RowCopyRef, "x", 30);

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
 import { usePinScroll } from "../hooks/usePinScroll";
+import useIsDesktop from "../hooks/useIsDesktop";
 
 gsap.registerPlugin(ScrollTrigger);
 const SignatureMeetings = () => {
@@ -16,8 +17,8 @@ const SignatureMeetings = () => {
   useMarqueeAnimation(leftContainerRef, rightContainerRef, "y", 30);
 
   const pinRef = useRef<HTMLDivElement>(null!);
-  usePinScroll(pinRef, { endOffset: 100 }); 
-  
+  const isDesktop = useIsDesktop(1024);
+  usePinScroll(pinRef, { endOffset: 100,  disabled: !isDesktop }); 
 
   useEffect(() => {
     if (!containerRef.current) return;

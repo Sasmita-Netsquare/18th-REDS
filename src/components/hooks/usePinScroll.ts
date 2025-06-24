@@ -18,10 +18,11 @@ export const usePinScroll = (
     endOffset = 100,
     pinSpacing = false,
     scrub = false,
-  }: UsePinScrollOptions = {}
+    disabled = false,
+  }: UsePinScrollOptions & { disabled?: boolean } = {}
 ) => {
   useEffect(() => {
-    if (!triggerRef.current) return;
+    if (!triggerRef.current || disabled) return; 
 
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
@@ -35,5 +36,5 @@ export const usePinScroll = (
     }, triggerRef);
 
     return () => ctx.revert();
-  }, [triggerRef, start, endOffset, pinSpacing, scrub]);
+  }, [triggerRef, start, endOffset, pinSpacing, scrub, disabled]);
 };

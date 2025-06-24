@@ -3,7 +3,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
-import { usePinScroll } from "../hooks/usePinScroll"; 
+import { usePinScroll } from "../hooks/usePinScroll";
+import useIsDesktop from "../hooks/useIsDesktop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,9 +57,9 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
 const EventNumbers: React.FC = () => {
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
-
   const pinRef = useRef<HTMLDivElement>(null!);
-  usePinScroll(pinRef, { endOffset: 485 }); 
+  const isDesktop = useIsDesktop(1024);
+  usePinScroll(pinRef, { endOffset: 485, disabled: !isDesktop });
 
   return (
     <div className="main-container flex items-center justify-center py-16">

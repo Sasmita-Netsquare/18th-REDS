@@ -3,6 +3,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
 import { usePinScroll } from "../hooks/usePinScroll";
+import useIsDesktop from "../hooks/useIsDesktop";
 
 const testimonials = [
   {
@@ -27,7 +28,8 @@ const Testimonials = () => {
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
   const pinRef = useRef<HTMLDivElement>(null!);
-  usePinScroll(pinRef, { endOffset: 235 });
+  const isDesktop = useIsDesktop(1024);
+  usePinScroll(pinRef, { endOffset: 235, disabled: !isDesktop });
 
   const handlePrev = () => {
     setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -71,7 +73,7 @@ const Testimonials = () => {
           </div>
 
           {/* Testimonials */}
-          <div className="grid md:grid-cols-2 gap-3 pl-13">
+          <div className="grid md:grid-cols-2 gap-3 lg:pl-13">
             {[
               testimonials[index], // always show this one
               ...(window.innerWidth >= 768

@@ -3,6 +3,7 @@ import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
 import { usePinScroll } from "../hooks/usePinScroll";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import useIsDesktop from "../hooks/useIsDesktop";
 
 const speakerArr = [
   {
@@ -42,7 +43,8 @@ const PastSpeakers = () => {
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
   const pinRef = useRef<HTMLDivElement>(null!);
-  usePinScroll(pinRef, { endOffset: 275 });
+  const isDesktop = useIsDesktop(1024);
+  usePinScroll(pinRef, { endOffset: 275, disabled: !isDesktop });
 
   const [clonedSpeakers, setClonedSpeakers] = useState(speakerArr);
 
