@@ -26,7 +26,7 @@ const Footer = () => {
         </p>
         <p>
           <span className="text-yellow-500 font-semibold">Phone Number: </span>
-          +44 20 3868 2202
+          <a href="tel:+442038682202">+44 20 3868 2202</a>
         </p>
         <p className="text-start">
           <span className="text-yellow-500 font-semibold">E-mail: </span>
@@ -40,16 +40,48 @@ const Footer = () => {
 
       {/* Social Links */}
       <div className="grid grid-cols-3 md:grid-cols-6 text-lg gap-4">
-        <span className="underline cursor-pointer">Facebook</span>
-        <span className="underline cursor-pointer md:text-center">
+        <a
+          href="https://www.facebook.com/gbbventures"
+          className="underline cursor-pointer"
+          target="_blank"
+        >
+          Facebook
+        </a>
+        <a
+          href="https://www.instagram.com/gbb_venture/"
+          className="underline cursor-pointer md:text-center"
+          target="_blank"
+        >
           Instagram
-        </span>
-        <span className="underline cursor-pointer md:text-center">Twitter</span>
-        <span className="underline cursor-pointer md:text-center">
+        </a>
+        <a
+          href="https://x.com/gbbventure"
+          className="underline cursor-pointer md:text-center"
+          target="_blank"
+        >
+          Twitter
+        </a>
+        <a
+          href="https://www.linkedin.com/company/gbb-consulting-services/"
+          className="underline cursor-pointer md:text-center"
+          target="_blank"
+        >
           LinkedIn
-        </span>
-        <span className="underline cursor-pointer md:text-center">Youtube</span>
-        <span className="underline cursor-pointer md:text-end">Spotify</span>
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCyEe6dVcyJwPXzVRqDZcJZw"
+          className="underline cursor-pointer md:text-center"
+          target="_blank"
+        >
+          Youtube
+        </a>
+        <a
+          href="https://open.spotify.com/show/3Zt2gWtvx3JgyQ8KaHPIwv?nd=1&dlsi=f9cda2db89064eb9"
+          className="underline cursor-pointer md:text-end"
+          target="_blank"
+        >
+          Spotify
+        </a>
       </div>
     </footer>
   );
