@@ -2,9 +2,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
-import SectionTitle from "./SectionTitle";
-import { usePinScroll } from "../hooks/usePinScroll";
 import useIsDesktop from "../hooks/useIsDesktop";
+import { usePinScroll } from "../hooks/usePinScroll";
+import SectionTitle from "./SectionTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,17 +63,17 @@ const EventNumbers: React.FC = () => {
 
   return (
     <div className="main-container flex items-center justify-center py-16">
-      <div className="grid lg:grid-cols-2 grid-cols-1 w-full relative">
+      <div className="flex md:flex-row flex-col w-full relative">
         {/* Left Section */}
-        <div className="relative">
+        <div className="relative md:w-1/3">
           <div ref={pinRef}>
             <SectionTitle title="Event by" subtitle="Numbers" ref={headRef} />
           </div>
         </div>
 
         {/* Right Section - Stats Grid */}
-        <div className="text-white flex items-center justify-center border-4 border-[#1c1c1e] lg:mt-36 md:mt-5 mt-5">
-          <div className="grid grid-cols-3 grid-rows-3 max-w-3xl w-full">
+        <div className="text-white border-4 border-[#1c1c1e] lg:mt-36 md:mt-5 mt-5 md:w-2/3">
+          <div className="grid grid-cols-3 grid-rows-3 w-full">
             {/* Top full-width box */}
             <div className="col-span-3 bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 ">
               <AnimatedNumber value={24} />
