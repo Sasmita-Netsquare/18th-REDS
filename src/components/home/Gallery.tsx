@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation } from "../hooks";
 import { useInView } from "../hooks/useInView";
 import SectionTitle from "./SectionTitle";
@@ -9,16 +9,16 @@ import SectionTitle from "./SectionTitle";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const features = [
-  { image: "/image_1.png" },
-  { image: "/image_2.png" },
-  { image: "/image_1.png" },
-  { image: "/image_2.png" },
-  { image: "/image_2.png" },
-  { image: "/image_1.png" },
-  { image: "/image_2.png" },
-  { image: "/image_1.png" },
-  { image: "/image_2.png" },
-  { image: "/image_1.png" },
+  { image: "/Event_Features/Distinguished_Speakers_2.jpg" },
+  { image: "/Event_Features/Global_Solution_Providers_2.jpg" },
+  { image: "/Event_Features/Network_of_Industry_Associations_2.jpg" },
+  { image: "/Event_Features/Pre_Qualified_Delegates_2.jpg" },
+  { image: "/Event_Features/Prior_Notification_of_Attendees_1-08.jpg" },
+  { image: "/Event_Features/Strategized_Networking_2.jpg" },
+  { image: "/Event_Features/Strategized_Networking_1.jpg" },
+  { image: "/Event_Features/Global_Solution_Providers_1.jpg" },
+  { image: "/Event_Features/Pre_Qualified_Delegates_1.jpg" },
+  { image: "/Event_Features/Prior_Notification_of_Attendees_1-07.jpg" },
 ];
 
 const Gallery = () => {

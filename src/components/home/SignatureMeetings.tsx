@@ -2,9 +2,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
-import SectionTitle from "./SectionTitle";
-import { usePinScroll } from "../hooks/usePinScroll";
 import useIsDesktop from "../hooks/useIsDesktop";
+import { usePinScroll } from "../hooks/usePinScroll";
+import SectionTitle from "./SectionTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 const SignatureMeetings = () => {
@@ -60,19 +60,21 @@ const SignatureMeetings = () => {
                 ref={leftContainerRef}
                 className="flex flex-col gap-2 relative z-0"
               >
-                <div className="lg:w-80 w-full h-auto overflow-hidden">
+                <div className="relative lg:w-80 w-full h-auto overflow-hidden">
                   <img
-                    src="/meeting_1.png"
+                    src="/Signature_Meetings/Signature_Meetings-01.jpg"
                     alt="Meeting 1"
                     className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-black/30 rounded-md"></div>
                 </div>
-                <div className="lg:w-80 w-full h-auto overflow-hidden">
+                <div className="relative lg:w-80 w-full h-auto overflow-hidden">
                   <img
-                    src="/meeting_3.png"
+                    src="/Signature_Meetings/Signature_Meetings-02.jpg"
                     alt="Meeting 3"
                     className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-black/30 rounded-md"></div>
                 </div>
               </div>
             </div>
@@ -83,19 +85,21 @@ const SignatureMeetings = () => {
                 ref={rightContainerRef}
                 className="flex flex-col gap-2 relative z-0"
               >
-                <div className="lg:w-80 w-full h-auto overflow-hidden">
+                <div className="relative lg:w-80 w-full h-auto overflow-hidden">
                   <img
-                    src="/meeting_2.png"
+                    src="/Signature_Meetings/Signature_Meetings-03.jpg"
                     alt="Meeting 2"
                     className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-black/30 rounded-md"></div>
                 </div>
-                <div className="lg:w-80 w-full h-auto overflow-hidden">
+                <div className="relative lg:w-80 w-full h-auto overflow-hidden">
                   <img
-                    src="/meeting_4.png"
+                    src="/Signature_Meetings/Signature_Meetings-04.jpg"
                     alt="Meeting 4"
                     className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-black/30 rounded-md"></div>
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10"></div>

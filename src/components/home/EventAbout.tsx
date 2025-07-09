@@ -43,16 +43,17 @@ const EventAbout = () => {
       <div className="flex flex-col justify-center items-center w-full">
         <SectionTitle title="About our" subtitle="Event" ref={headRef} />
         <div className="flex lg:flex-row flex-col w-full md:gap-5 gap-4 sm:justify-center sm:items-center">
-          <div
-            className="mt-10 lg:w-[100%] lg:px-[0.01rem] md:px-[0.1rem] md:w-full"
-            ref={imageRef}
-          >
-            <img
-              src="/image_1.png"
-              alt="image"
-              className="w-full h-auto lg:h-[100%] rounded-md lg:w-[100%]"
-            />
-          </div>
+        <div
+          className="relative mt-10 md:w-full lg:px-[0.01rem] md:px-[0.1rem]"
+          ref={imageRef}
+        >
+          <img
+            src="/Meetings-Section-15.png"
+            alt="image"
+            className="w-full h-auto lg:h-full rounded-md"
+          />
+          <div className="absolute inset-0 bg-black/30 rounded-md"></div>
+        </div>
 
           {/* Right Section */}
           <div
