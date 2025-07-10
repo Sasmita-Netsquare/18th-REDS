@@ -41,7 +41,7 @@ const EventAbout = () => {
   return (
     <div className="main-container flex items-center justify-center lg:py-10">
       <div className="flex flex-col justify-center items-center w-full">
-        <SectionTitle title="About our" subtitle="Event" ref={headRef} />
+        <SectionTitle title="" subtitle="Overview" ref={headRef} />
         <div className="flex lg:flex-row flex-col w-full md:gap-5 gap-4 sm:justify-center sm:items-center">
         <div
           className="relative mt-10 md:w-full lg:px-[0.01rem] md:px-[0.1rem]"
