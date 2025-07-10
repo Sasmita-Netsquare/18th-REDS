@@ -63,17 +63,16 @@ const EventNumbers: React.FC = () => {
 
   return (
     <div className="main-container flex items-center justify-center py-16">
-      <div className="flex md:flex-row flex-col w-full relative">
+      <div className="w-full flex flex-col gap-7">
         {/* Left Section */}
-        <div className="relative md:w-1/3">
           <div ref={pinRef}>
             <SectionTitle title="Event by" subtitle="Numbers" ref={headRef} />
           </div>
-        </div>
 
         {/* Right Section - Stats Grid */}
-        <div className="text-white border-4 border-[#1c1c1e] lg:mt-36 md:mt-5 mt-5 md:w-2/3">
-          <div className="grid grid-cols-3 grid-rows-3 w-full">
+        <div className="flex justify-end">
+        <div className="text-white border-4 border-[#1c1c1e] md:mt-5 mt-5 lg:w-9/12 w-full">
+          <div className="grid grid-cols-3 grid-rows-3 lg:w-full">
             {/* Top full-width box */}
             <div className="col-span-3 bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 ">
               <AnimatedNumber value={24} />
@@ -113,6 +112,8 @@ const EventNumbers: React.FC = () => {
             </div>
           </div>
         </div>
+        </div>
+
       </div>
     </div>
   );
