@@ -61,25 +61,23 @@ const EventAbout = () => {
             ref={containerRef}
           >
             <p>
-              Saudi Arabia’s Real Estate Market size is estimated at USD 69.51
-              billion in 2024, and is expected to reach USD 101.62 billion by
-              2029. Saudi Arabia has identified housing, tourism and commercial
-              as some of its key projects under Vision 2030. As the demand
-              continues to surpass supply in these sectors, owners, developers,
-              operators, contractors, architects, designers and consultants are
-              working wonders to create projects of the future, projects that
-              redefine human limitations, projects that push the boundaries of
-              possibilities. What they need are, right partners and products to
-              count on.
+              Africa's real estate market is poised to reach US$17.64 trillion by 2025, 
+              driven by rapid urbanization and increased infrastructure investments. 
+               This if further expected to grow at an annual rate of 5.58% from 2025 to 2029, 
+               reaching US$21.92 trillion by 2029. The Residential Market dominates this growth 
+               with a projected volume of US$14.87 trillion in 2025. The hotel market is not far 
+               behind with market projections of the revenue in this market expected to surge from 
+               US$11.29bn in 2025 to US$15.00bn by 2029, at an annual growth rate of 7.36%. The 
+               Commercial Real Estate market in Africa is anticipated to achieve a significant milestone, 
+               with a projected value of US$2.77tn in 2025 and expected growth to US$3.20tn by 2029.
             </p>
             <p>
-              Real Estate Development Summit provides a gateway to these
-              possibilities. By efficiently putting your time to use for
-              valuable knowledge exchange, guidance of the thought leaders and
-              most importantly connecting you, to the right people with right
-              requirement at the right time. Breaking the confines of the
-              conventional, embark on this journey to explore the world of
-              opportunities as we are Connecting Beyond Boundaries!
+              While the entire continent is showing exponential growth, some countries with notable 
+              developments are Mauritius, Seychelles, Morocco, Egypt, Namibia, South Africa, Rwanda, 
+              Nigeria, Ethiopia, Ghana, Tanzania and Kenya. With such strong market factors, the demand 
+              for delivering these massive volumes of real estate projects as per the international standards 
+              and within the stringent time frames is huge which is why the 18th Edition Real Estate Development 
+              Summit Africa plays such a vital role in bringing the decision makers together, to meet these demands.
             </p>
           </div>
         </div>

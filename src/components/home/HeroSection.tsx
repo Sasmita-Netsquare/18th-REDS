@@ -52,7 +52,8 @@ export default function HeroSection() {
 
           <div className="mt-4 text-lg" ref={infoRef}>
             <p>8-9 Oct 2025</p>
-            <p>Dubai, UAE</p>
+            {/* <p>Dubai, UAE</p> */}
+            <p>InterContinental Dubai Festival City</p>
           </div>
         </div>
       </div>

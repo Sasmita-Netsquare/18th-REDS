@@ -75,36 +75,36 @@ const EventNumbers: React.FC = () => {
           <div className="grid grid-cols-3 grid-rows-3 lg:w-full">
             {/* Top full-width box */}
             <div className="col-span-3 bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 ">
-              <AnimatedNumber value={24} />
+              <AnimatedNumber value={25} />
               <div className="lg:text-xl md:text-xl text-lg">Events</div>
             </div>
 
             {/* Middle 3 boxes */}
             <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-7">
-              <AnimatedNumber value={381} suffix="+" />
+              <AnimatedNumber value={402} suffix="+" />
               <div className="lg:text-xl md:text-xl text-lg">Speakers</div>
             </div>
             <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-7">
-              <AnimatedNumber value={1050} suffix="+" />
+              <AnimatedNumber value={1158} suffix="+" />
               <div className="lg:text-xl md:text-xl text-lg text-center">
                 Solution Providers
               </div>
             </div>
             <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-7">
-              <AnimatedNumber value={2592} suffix="+" />
+              <AnimatedNumber value={2750} suffix="+" />
               <div className="lg:text-xl md:text-xl text-lg">Buyers</div>
             </div>
 
             {/* Bottom 2 boxes */}
             <div className="flex col-span-3 w-full ">
               <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 w-full">
-                <AnimatedNumber value={24400} suffix="+" />
+                <AnimatedNumber value={25400} suffix="+" />
                 <div className="lg:text-xl md:text-xl text-lg">
                   B2B Meetings
                 </div>
               </div>
               <div className="bg-[#111] border-2 border-[#1c1c1e] flex flex-col gap-3 items-center justify-center py-12 w-full">
-                <AnimatedNumber value={24400} suffix="+" />
+                <AnimatedNumber value={25400} suffix="+" />
                 <div className="lg:text-xl md:text-xl text-lg">
                   B2B Meetings
                 </div>

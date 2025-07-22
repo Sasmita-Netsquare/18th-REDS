@@ -108,19 +108,15 @@ const SignatureMeetings = () => {
           <div className=" w-full mt-10 " ref={containerRef}>
             <div ref={pinRef}>
             <p className="leading-relaxed text-gray-300 lg:w-[75%] sm:w-full">
-              The key offering of Summits organized by GBB are the pre-arranged,
-              diligently curated B2B meetings scheduled for the delegates and
-              suppliers. The invited delegates are pre-qualified based on a
-              number of criteria including the projects represented, size of
-              these projects, their decision-making capacity and the budgets to
-              source. They then provide their project requirements which is
-              carefully matched with the offerings of the renowned global
-              suppliers attending the summit. This robust process ensures
-              high-quality business matches, based on which the face-to-face
-              meetings are organized with the help of dedicated account managers
-              at the summit. Every meeting therefore is sure to be productive
-              while leaving each attendee with long-term and valuable business
-              network.
+              The key offering of Summits organized by GBB are the pre-arranged, diligently 
+              curated B2B meetings scheduled for the delegates and suppliers. The invited delegates 
+              are pre-qualified based on a number of criteria including the projects represented, 
+              size of these projects, their decision-making capacity and the budgets to source. 
+              They then provide their project requirements which is carefully matched with the offerings 
+              of the renowned global suppliers attending the summit. This robust process ensures high-quality 
+              business matches, based on which the face-to-face meetings are organized with the help of dedicated 
+              account managers at the summit. Every meeting therefore is sure to be productive while leaving each 
+              attendee with long-term and valuable business network.
             </p>
             </div>
           </div>

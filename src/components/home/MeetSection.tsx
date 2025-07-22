@@ -12,8 +12,10 @@ const MeetGrid = () => {
     "Hotel Operators",
     "Hotel Owners",
     "Consultants",
+    "Contractors",
     "Global Solution Providers",
     "Media / Associations",
+    "Investors",
   ];
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1); const 
