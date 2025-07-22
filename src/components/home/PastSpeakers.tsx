@@ -1,38 +1,56 @@
 import { useEffect, useRef, useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useHeadingGroupAnimation } from "../hooks";
 import SectionTitle from "./SectionTitle";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const speakerArr = [
   {
-    image: "/speaker1.jpg",
-    name: "Mark Kennedy",
-    title: "Head of Design",
-    company: "MAGNA – NEOM",
+    image: "/speaker/speake1.jpg",
+    name: "Ira Sundukova",
+    title: "Founder of Sundukovy Sisters",
+    company: "Sundukovy Sisters (S+S) Studio",
   },
   {
-    image: "/speaker2.jpg",
-    name: "Jane Doe",
-    title: "Chief Architect",
-    company: "RedSea Global",
+    image: "/speaker/speaker2.jpg",
+    name: "Mohamed Shehata",
+    title: "Group CDO",
+    company: "Abu Soma Development Company [Somabay]",
   },
   {
-    image: "/speaker3.jpg",
-    name: "Ali Mohammed",
-    title: "Lead Engineer",
-    company: "Saudi Vision",
+    image: "/speaker/speaker3.jpg",
+    name: "Ahmed El-Halawany",
+    title: "Chief Development Officer",
+    company: "SODIC",
   },
   {
-    image: "/speaker4.jpg",
-    name: "Sara Smith",
-    title: "Innovation Officer",
-    company: "NEOM",
+    image: "/speaker/speaker4.jpg",
+    name: "Mohamed Abudagher",
+    title: "Executive Director of Hospitality (Owner Representative)",
+    company: "Talaat Moustafa Holding Group",
   },
   {
-    image: "/speaker5.jpg",
-    name: "John Wilson",
-    title: "CEO",
-    company: "Giga Projects",
+    image: "/speaker/speaker5.jpg",
+    name: "Ajay K. Bakaya",
+    title: "Managing Director, Sarovar Hotels & Director",
+    company: "Louvre Hotels",
+  },
+  {
+    image: "/speaker/speaker6.jpg",
+    name: "Shady Hassan",
+    title: "Vice President Development, North Africa",
+    company: "Marriott International",
+  },
+  {
+    image: "/speaker/speaker7.jpg",
+    name: "Justin Wells",
+    title: "Founder & CEO",
+    company: "Wells International",
+  },
+  {
+    image: "/speaker/speaker8.jpg",
+    name: "Amir Golbarg",
+    title: "Senior Vice President - Middle East & Africa",
+    company: "Minor Hotels",
   },
 ];
 
@@ -135,7 +153,7 @@ const PastSpeakers = () => {
           {clonedSpeakers.map((speaker, index) => (
             <div
               key={index}
-              className="speaker-card min-w-[250px] flex-shrink-0 snap-center"
+              className="speaker-card min-w-[250px] flex-shrink-0 snap-center "
             >
               <div className="border-4 border-yellow-500 w-[250px] h-[250px] mb-2">
                 <img
@@ -146,7 +164,7 @@ const PastSpeakers = () => {
                 />
               </div>
               <p className="text-white font-semibold">{speaker.name}</p>
-              <p className="text-sm text-gray-300">{speaker.title}</p>
+              <p className="text-sm text-gray-300 w-[14.1rem] py-1">{speaker.title}</p>
               <p className="text-sm text-gray-300">{speaker.company}</p>
             </div>
           ))}
