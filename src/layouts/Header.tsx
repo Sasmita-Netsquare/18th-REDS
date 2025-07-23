@@ -31,18 +31,18 @@ const Header = () => {
             isOpen ? "flex" : "hidden"
           } absolute top-full left-0 w-full flex-col items-center bg-black shadow-md z-10 lg:shadow-none lg:bg-transparent lg:flex lg:static lg:flex-row lg:w-auto lg:gap-10 mt-4 lg:mt-0 gap-6 transition-all duration-300 py-2`}
         >
-          <a href="#" className="hover:text-yellow-500 text-white">
+          {/* <a href="#" className="hover:text-yellow-500 text-white">
             Home
-          </a>
-          <a href="#" className="hover:text-yellow-500 text-white">
+          </a> */}
+          {/* <a href="#" className="hover:text-yellow-500 text-white">
             Speakers
-          </a>
+          </a> */}
           <a href="#" className="hover:text-yellow-500 text-white">
             Agenda
           </a>
-          <a href="#" className="hover:text-yellow-500 text-white">
+          {/* <a href="#" className="hover:text-yellow-500 text-white">
             Media
-          </a>
+          </a> */}
           <a
             href="#"
             className="text-black py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-[0_0_20px_4px_rgba(240,175,18,0.7)] hover:text-white"

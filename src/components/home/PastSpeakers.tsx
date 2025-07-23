@@ -5,7 +5,7 @@ import SectionTitle from "./SectionTitle";
 
 const speakerArr = [
   {
-    image: "/speaker/speake1.jpg",
+    image: "/speaker/speaker1.jpg",
     name: "Ira Sundukova",
     title: "Founder of Sundukovy Sisters",
     company: "Sundukovy Sisters (S+S) Studio",
@@ -52,6 +52,84 @@ const speakerArr = [
     title: "Senior Vice President - Middle East & Africa",
     company: "Minor Hotels",
   },
+  {
+    image: "/speaker/speaker9.jpg",
+    name: "Lee-Anne Singer",
+    title: "Partner",
+    company: "HVS Middle East & Africa",
+  },
+  {
+    image: "/speaker/speaker10.jpg",
+    name: "Tarek Hegazy",
+    title: "Principal & Creative Director",
+    company: "Living Design of Sweden AB",
+  },
+  {
+    image: "/speaker/speaker11.jpg",
+    name: "Dipo Adebo",
+    title: "Senior Partner, Principal Architect & Senior Project Manager",
+    company: " DAA Architects Ltd.",
+  },
+  {
+    image: "/speaker/speaker12.jpg",
+    name: "Turab Saleem",
+    title: "Hospitality, Tourism & Leisure Advisory Services",
+    company: "Knight Frank",
+  },
+  {
+    image: "/speaker/speaker13.jpg",
+    name: "Jameel Verjee",
+    title: "Founder & CEO",
+    company: "CityBlue Hotels",
+  },
+  {
+    image: "/speaker/speaker14.jpg",
+    name: "Alban Mabille de Poncheville",
+    title: "Head of Business Development - Middle East & Africa",
+    company: "United Hospitality Management",
+  },
+  {
+    image: "/speaker/speaker15.jpg",
+    name: "Chike Ogeah",
+    title: "Managing Director",
+    company: "Mac-Folly Hospitality",
+  },
+  {
+    image: "/speaker/speaker16.jpg",
+    name: "Ezana Kirubel",
+    title: "Owner",
+    company: "Anyana Hospitality",
+  },
+  {
+    image: "/speaker/speaker17.jpg",
+    name: "JS Anand",
+    title: "Founder & CEO",
+    company: "LEVA Hotels",
+  },
+  {
+    image: "/speaker/speaker18.jpg",
+    name: "Neale Petersen",
+    title:"Founder & CEO",
+    company: "Real Estate Investor Magazine",
+  },
+  {
+    image: "/speaker/speaker19.jpg",
+    name: "Shadi El Ghoneimi",
+    title: "Partner and Head of Design",
+    company: "El Ghoneimi International",
+  },
+  {
+    image: "/speaker/speaker20.jpg",
+    name: "MARDRE MEYER",
+    title: "Creative Director",
+    company: "Source",
+  },
+  {
+    image: "/speaker/speaker21.jpg",
+    name: "Diane Thorsen",
+    title: "Design Principal, Global Hospitality Lead",
+    company: "Gensler",
+  }
 ];
 
 const PastSpeakers = () => {
