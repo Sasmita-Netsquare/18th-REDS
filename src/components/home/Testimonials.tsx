@@ -5,19 +5,53 @@ import SectionTitle from "./SectionTitle";
 
 const testimonials = [
   {
-    text: `GBB is different from most business networking events. In fact, we flip the conventional model on its head! Rather than putting people in a room and letting them discover the value, we believe it’s our responsibility to connect our event participants with pre-qualified opportunities.`,
-    author: "Founder & CEO",
-    company: "Artevo Consulting",
+    text: `It’s a great chance so much time with the buyer, and it’s very important 
+    to maximize our presence in Saudi Arabia. It’s a great opportunity to interact with
+    a lot of players in the business in a very short time and to have very effective conversations.
+    If I had to do it in a different way, it would take me much more time and would be less effective, 
+    so I’m grateful for this chance`,
+    designation: "VP Global Marketing - Smart Buildings",
+    company: "ABB",
   },
   {
-    text: `This event provided excellent opportunities and networking with industry leaders. The experience was truly transformational and well-organized. The experience was truly transformational and well-organized. The experience was truly transformational and well-organized.`,
-    author: "Managing Director",
-    company: "InnovateX",
+    text: `We are a famous luxury experience brand, and I was here today to present our hospitality
+    and real estate opportunities. I’m very happy about this experience. I had a chance to present 
+    what we do to the Saudi market, which is very important. We think that it is a great opportunity indeed, 
+    and I was very happy to be here and to have very interesting meetings. I would like to thank GBB for having 
+    me here. Everything was so well organized, and I’m really happy with the experience. I think it was highly 
+    professional but also very informal, and we were just very comfortable. We enjoyed it a lot! Thank you!`,
+    designation: "COO Hospitality and Real Estate Development",
+    company: "Tonino Lamborghini",
   },
   {
-    text: `A must-attend summit for anyone looking to engage with top-tier professionals and gain valuable insights. Kudos to the organizing team!The experience was truly transformational and well-organized. The experience was truly transformational and well-organized. The experience was truly transformational and well-organized.`,
-    author: "CMO",
-    company: "TechFront",
+    text: `Hospitality is booming in the region so it is definitely the right time to host such an event 
+    and bring together the hospitality leaders to discuss and to shape the future of the industry. 
+    It was a very good opportunity for the suppliers to meet the buyers, but at the same time, it was a good 
+    opportunity for the buyers to see the new innovations, technologies and products offered by the suppliers. 
+    I'm very happy to be a part of this event, and we are looking forward to the next one.`,
+    designation: "Leader Architecture and Design MENA",
+    company: "LIXIL EMENA",
+  },
+  {
+    text: `This is my first time here in the Hospitality Innovation Summit and this has been a great experience 
+    for me, and I see a lot of opportunities. Hopefully, I get to come here many years to come, and I wish everyone 
+    the best of luck and we’ll do great! Thank you!`,
+    designation: "VP of Sales",
+    company: "Gruppo Bounifante",
+  },
+  {
+    text: `I’m very happy to be here today at the HIS 2023. It’s an amazing place where we can meet industry leaders.`,
+    designation: "MEA Hotel Segment Director",
+    company: "Schneider Electric",
+  },
+  {
+    text: `I am the CEO and founder of RKF Group from France. I appreciate so much the way that it is because 
+    I came here for the third time because each time I feel like it's increasing the level, the category and the 
+    qualification of the people attending the event, from both sides, buyers and suppliers. The quality of the connection
+    and the organisation itself is really high-end.And when you know the key people coming here and that's why 
+    I congratulate the organizer for bringing these people.`,
+    designation: "CEO and Founder",
+    company: "RKF Linen",
   },
 ];
 
@@ -75,7 +109,7 @@ const Testimonials = () => {
                   {testimonial.text}
                 </p>
                 <p className="mt-6 text-sm sm:text-base text-yellow-500">
-                  _ {testimonial.author}
+                  _ {testimonial.designation}
                 </p>
                 <p className="text-sm sm:text-base text-gray-300">
                   _ {testimonial.company}
