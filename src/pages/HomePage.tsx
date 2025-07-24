@@ -4,6 +4,7 @@ import {
   EventNumbers,
   Gallery,
   HeroSection,
+  InvestorMeet,
   MeetSection,
   PastPartners,
   PastSpeakers,
@@ -20,6 +21,7 @@ export default function HomePage() {
       <MeetSection />
       <EventFeatures />
       <SignatureMeetings />
+      <InvestorMeet />
       <PastSpeakers />
       <PastPartners />
       <Testimonials />

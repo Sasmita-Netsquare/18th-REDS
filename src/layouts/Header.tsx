@@ -9,11 +9,13 @@ const Header = () => {
       <div className="flex items-center justify-between w-full relative">
         {/* Logo */}
         <div className="flex items-center">
+          <a href="/">
           <img
             src="/main_logo.png"
             alt="Logo"
             className="w-32 lg:w-56 h-auto"
           />
+          </a>
         </div>
 
         {/* Hamburger Icon (Mobile) */}
@@ -34,9 +36,9 @@ const Header = () => {
           {/* <a href="#" className="hover:text-yellow-500 text-white">
             Home
           </a> */}
-          {/* <a href="#" className="hover:text-yellow-500 text-white">
-            Speakers
-          </a> */}
+          <a href="#" className="hover:text-yellow-500 text-white">
+            Investor Meet
+          </a>
           <a href="#" className="hover:text-yellow-500 text-white">
             Agenda
           </a>
