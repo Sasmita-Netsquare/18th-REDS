@@ -130,12 +130,63 @@ const PastPartners = () => {
       image: "/sumit_partners/row2/summit-row2-19.png",
     },
   ]
+
+  const media = [
+    {
+      image: "/media/media1.png",
+    },
+    {
+      image: "/media/media2.png",
+    },
+    {
+      image: "/media/media3.png",
+    },
+    {
+      image: "/media/media4.png",
+    },
+    {
+      image: "/media/media5.png",
+    },
+    {
+      image: "/media/media6.png",
+    },
+    {
+      image: "/media/media7.png",
+    },
+    {
+      image: "/media/media8.png",
+    },
+    {
+      image: "/media/media9.png",
+    },
+    {
+      image: "/media/media10.png",
+    },
+    {
+      image: "/media/media11.png",
+    },
+    {
+      image: "/media/media12.png",
+    },
+    {
+      image: "/media/media13.jpg",
+    },
+    {
+      image: "/media/media14.jpg",
+    },
+    {
+      image: "/media/media15.jpg",
+    },
+    {
+      image: "/media/media16.jpg",
+    },
+  ]
   
   const headRef = useRef(null);
   useHeadingGroupAnimation(headRef, 0.1);
-  // const mid = Math.ceil(mediaPartners.length / 2);
-  // const topLogos = mediaPartners.slice(0, mid);
-  // const bottomLogos = mediaPartners.slice(mid);
+  const mid = Math.ceil(media.length / 2);
+  const topLogos = media.slice(0, mid);
+  const bottomLogos = media.slice(mid);
   const leftRowRef = useRef<HTMLDivElement>(null);
   const rightRowRef = useRef<HTMLDivElement>(null);
   const leftCopyRef = useRef<HTMLDivElement>(null);
@@ -200,7 +251,7 @@ const PastPartners = () => {
       <div className="w-full flex justify-end overflow-hidden px-[0.05rem]">
         <div className="lg:w-[75%] overflow-hidden">
           <div ref={leftCopyRef} className="flex gap-1 mb-4 w-max ">
-            {rows1.map((item, index) => (
+            {topLogos.map((item, index) => (
               <div
                 key={index}
                 className="aspect-[4/2] px-3 w-full h-28 overflow-hidden"
@@ -214,7 +265,7 @@ const PastPartners = () => {
             ))}
           </div>
           <div ref={RowCopyRef} className="flex gap-1 mb-4 w-max">
-            {rows2.map((item, index) => (
+            {bottomLogos.map((item, index) => (
               <div
                 key={index}
                 className="aspect-[4/2] px-3 w-full h-28 overflow-hidden"
