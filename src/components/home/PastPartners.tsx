@@ -203,12 +203,12 @@ const PastPartners = () => {
             {rows1.map((item, index) => (
               <div
                 key={index}
-                className="aspect-[4/2] w-full h-28 overflow-hidden"
+                className="aspect-[4/2] px-3 w-full h-28 overflow-hidden"
               >
                 <img
                   src={item.image}
                   alt="logo"
-                  className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 ease-in-out"
                 />
               </div>
             ))}
@@ -217,12 +217,12 @@ const PastPartners = () => {
             {rows2.map((item, index) => (
               <div
                 key={index}
-                className="aspect-[4/2] w-full h-28 overflow-hidden"
+                className="aspect-[4/2] px-3 w-full h-28 overflow-hidden"
               >
                 <img
                   src={item.image}
                   alt="logo"
-                  className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 ease-in-out"
                 />
               </div>
             ))}
