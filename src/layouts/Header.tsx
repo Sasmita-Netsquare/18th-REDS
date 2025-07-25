@@ -39,7 +39,7 @@ const Header = () => {
           <a href="#" className="hover:text-yellow-500 text-white">
             Investor Meet
           </a>
-          <a href="#" className="hover:text-yellow-500 text-white">
+          <a href="/agenda" className="hover:text-yellow-500 text-white">
             Agenda
           </a>
           {/* <a href="#" className="hover:text-yellow-500 text-white">

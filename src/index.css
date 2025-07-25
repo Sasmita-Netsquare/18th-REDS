@@ -15,8 +15,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  @apply min-h-screen overflow-x-hidden;
-  overflow-y: auto;
+  /* @apply min-h-screen overflow-x-hidden; */
+  /* overflow-y: auto; */
   background-attachment: fixed;
   background-image: url("/backgroundImage.png");
   background-size: cover;
@@ -24,12 +24,13 @@ body {
   background-position: center;
   font-family: "Suisse Int'l", sans-serif;
   color: #ffffff; /* Optional: make text white to contrast with black bg */
-  overscroll-behavior-y: none;
+  /* overscroll-behavior-y: none; */
 }
 
 @layer components {
   .main-container {
-    @apply mx-auto max-w-screen overflow-hidden w-full px-[0.75rem] md:px-[1.560rem] lg:px-[3.260rem] 2xl:px-[3.8rem];
+    /* @apply mx-auto max-w-screen w-full overflow-hidden px-[0.75rem] md:px-[1.560rem] lg:px-[3.260rem] 2xl:px-[3.8rem]; */
+    @apply mx-auto max-w-screen w-full px-[0.75rem] md:px-[1.560rem] lg:px-[3.260rem] 2xl:px-[3.8rem];
   }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
