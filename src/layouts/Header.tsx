@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +40,9 @@ const Header = () => {
           <a href="#" className="hover:text-yellow-500 text-white">
             Investor Meet
           </a>
-          <a href="/agenda" className="hover:text-yellow-500 text-white">
+          <Link to="/agenda" className="hover:text-yellow-500 text-white">
             Agenda
-          </a>
+          </Link>
           {/* <a href="#" className="hover:text-yellow-500 text-white">
             Media
           </a> */}
