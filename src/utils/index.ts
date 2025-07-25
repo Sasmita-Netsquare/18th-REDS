@@ -252,3 +252,24 @@ export const industryOptions = [
   { label: "MEP Consultants", value: "mep_consultants" },
   { label: "Others", value: "others" }
 ]
+
+export const interestOptions = 
+[
+  {
+    label: "Exploring New Investment Opportunities",
+    value: "exploring_new_investment_opportunities"
+  },
+  {
+    label: "Seeking Capital for Real Estate Projects",
+    value: "seeking_capital_for_real_estate_projects"
+  },
+  {
+    label: "Connecting with Leading Developers",
+    value: "connecting_with_leading_developers"
+  },
+  {
+    label: "Engaging with Hotel Operators for Strategic Partnerships",
+    value: "engaging_with_hotel_operators_for_strategic_partnerships"
+  }
+]
+
