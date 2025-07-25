@@ -1,6 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import { serviceOptions, whereDidYouHearAboutUsOptions } from "../../utils";
+import { industryOptions, whereDidYouHearAboutUsOptions } from "../../utils";
 import CountrySelectCustom from "./CountrySelectCustom";
 
 export default function BuyerForm() {
@@ -93,7 +93,7 @@ export default function BuyerForm() {
                 <label htmlFor="category" className="font-bold">Select Category <span className="text-red-500">*</span></label>
                 <Field name="category" as="select" className="mt-1 w-full p-2 rounded text-black bg-gray-100 focus:outline-none">
                   <option value="">- Select -</option>
-                  {serviceOptions.map((item) => (
+                  {industryOptions.map((item) => (
                   <option key={item.value} value={item.value} className="absolute h-20  ">
                     {item.label}
                   </option>

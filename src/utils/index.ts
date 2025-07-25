@@ -239,3 +239,16 @@ export const serviceOptions = [
   { label: "Roofing, Cladding, Walls & Ceilings", value: "roofing-cladding-walls-ceilings" },
   { label: "Others", value: "others" }
 ];
+
+export const industryOptions = [
+  { label: "Turnkey Fit-Out Services", value: "turnkey_fit_out_services" },
+  { label: "Architects", value: "architects" },
+  { label: "Developers", value: "developers" },
+  { label: "Interior Designers", value: "interior_designers" },
+  { label: "Hotel Operators", value: "hotel_operators" },
+  { label: "Hotel Owners", value: "hotel_owners" },
+  { label: "Project Management Consultants", value: "project_management_consultants" },
+  { label: "Construction Management Consultants", value: "construction_management_consultants" },
+  { label: "MEP Consultants", value: "mep_consultants" },
+  { label: "Others", value: "others" }
+]
