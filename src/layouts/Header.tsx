@@ -46,15 +46,15 @@ const Header = () => {
           {/* <a href="#" className="hover:text-yellow-500 text-white">
             Media
           </a> */}
-          <a
-            href="#"
+          <Link
+            to="/register"
             className="text-black py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-[0_0_20px_4px_rgba(240,175,18,0.7)] hover:text-white"
             style={{
               background: "linear-gradient(96.18deg, #F0AF12 0%, #B2680A 100%)",
             }}
           >
             Register Now
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
