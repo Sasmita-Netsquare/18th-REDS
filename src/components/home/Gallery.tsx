@@ -84,7 +84,7 @@ const Gallery = () => {
         {/* Header */}
         <SectionTitle title="Photos" subtitle="Gallery" ref={headRef} />
         {/* Gallery Grid */}
-        <div className="flex mt-15 gap-4">
+        <div className="flex lg:flex-row flex-col  mt-15 gap-4">
           {/* Column 1 */}
           <div
             className="flex flex-col gap-4 lg:w-1/3 will-change-transform"
