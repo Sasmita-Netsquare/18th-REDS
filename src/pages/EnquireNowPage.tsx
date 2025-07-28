@@ -8,7 +8,7 @@ export default function EnquireNowPage() {
     }, 100);
   }, []);
   return (
-     <div className="main-container text-white px-4 py-10 font-sans">
+     <div className="main-container text-white px-4 py-10 font-sans mt-30">
       <InvestorMeetForm/>
       </div>
   )
