@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/agenda" element={<AgendaPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/enquire-now" element={<EnquireNowPage />} />
+        <Route path="/gbb-xclusive-investor-developer-operator-meet" element={<EnquireNowPage />} />
       </Route>
     </Routes>
   </>
