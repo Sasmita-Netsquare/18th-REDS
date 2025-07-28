@@ -84,10 +84,10 @@ const Gallery = () => {
         {/* Header */}
         <SectionTitle title="Photos" subtitle="Gallery" ref={headRef} />
         {/* Gallery Grid */}
-        <div className="flex gap-1 mt-15 gap-4">
+        <div className="flex mt-15 gap-4">
           {/* Column 1 */}
           <div
-            className="flex flex-col gap-4 w-1/3 will-change-transform"
+            className="flex flex-col gap-4 lg:w-1/3 will-change-transform"
             ref={col1Ref}
           >
             <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
@@ -110,7 +110,7 @@ const Gallery = () => {
 
           {/* Column 2 with adjusted margin */}
           <div
-            className="flex flex-col gap-4 w-1/3 mt-20 will-change-transform"
+            className="flex flex-col gap-4 lg:w-1/3 mt-20 will-change-transform"
             ref={col2Ref}
           >
             <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
@@ -132,7 +132,7 @@ const Gallery = () => {
 
           {/* Column 3 */}
           <div
-            className="flex flex-col gap-4 w-1/3 mt-10 will-change-transform"
+            className="flex flex-col gap-4 lg:w-1/3 mt-10 will-change-transform"
             ref={col3Ref}
           >
             <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>

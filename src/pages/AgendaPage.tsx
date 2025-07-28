@@ -155,7 +155,7 @@ export default function AgendaPage() {
     </div>
 
       {/* Agenda List */}
-      <div className="divide-y divide-gray-500 px-10">
+      <div className="divide-y divide-gray-500 lg:px-10">
         {agenda.map((item, index) => (
           <div key={index} className="py-6 flex lg:flex-row flex-col lg:space-x-20 w-full">
             <div className="text-orange-400 text-3xl mb-1 lg:w-[21%]">

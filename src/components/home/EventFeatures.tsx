@@ -59,7 +59,7 @@ const EventFeatures = () => {
   return (
     <div className="main-container text-white pt-16" ref={ref}>
       <SectionTitle title="Event" subtitle="Features" ref={headRef} />
-      <div className="flex gap-4 mt-12">
+      <div className="flex md:flex-row flex-col gap-4 mt-12">
         {/* Column 1 */}
         <div
           className="flex flex-col gap-4 w-1/2 will-change-transform"

@@ -35,6 +35,9 @@ export default function InvestorMeetForm() {
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
         {() => (
           <Form className="space-y-6">
+
+          <h1 className="text-4xl font-bold text-center pb-10">GBB Xclusive Investor-Developer-Operator Meet</h1>
+
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4 lg:gap-8">
               <div className="relative">
                 <label htmlFor="fullName" className="font-bold">Full Name <span className="text-red-500">*</span></label>
