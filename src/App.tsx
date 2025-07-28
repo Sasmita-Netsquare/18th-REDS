@@ -1,20 +1,25 @@
 import { Route, Routes } from "react-router-dom";
+import { ScrollToTop } from "./components";
 import PublicLayout from "./layouts/PublicLayout";
 import AgendaPage from "./pages/AgendaPage";
+import EnquireNowPage from "./pages/EnquireNowPage";
 import HomePage from "./pages/HomePage";
-import InvestorMeetPage from "./pages/InvestorMeetPage";
 import RegisterPage from "./pages/RegisterPage";
 
 const App = () => {
   return (
+  <>
+   <ScrollToTop />
     <Routes>
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/agenda" element={<AgendaPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/investor-meet" element={<InvestorMeetPage />} />
+        <Route path="/enquire-now" element={<EnquireNowPage />} />
       </Route>
     </Routes>
+  </>
+
   );
 };
 

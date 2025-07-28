@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { useHeadingGroupAnimation, useMarqueeAnimation } from "../hooks";
 import useIsDesktop from "../hooks/useIsDesktop";
 import { usePinScroll } from "../hooks/usePinScroll";
@@ -35,11 +36,11 @@ const InvestorMeet = () => {
         y: 0,
         opacity: 1,
         duration: 1,
-        stagger: 0.5, // delay between each <p> animation
+        stagger: 0.5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%", // when top of container hits 80% viewport height
+          start: "top 80%",
           toggleActions: "play none none none",
         },
       }
@@ -106,7 +107,7 @@ const InvestorMeet = () => {
             </div>
           </div>
           <div className=" w-full mt-10 " ref={containerRef}>
-            <div ref={pinRef}>
+            <div ref={pinRef} className="flex flex-col gap-4">
             <p className="leading-relaxed text-gray-300 lg:w-[75%] sm:w-full">
             A premier platform bringing together global investors, top developers, and key operators 
             shaping the future of real estate across the African Continent. This session provides a unique 
@@ -114,6 +115,15 @@ const InvestorMeet = () => {
             region's rapidly expanding real estate industry. Capitalize on the chance to lead Africa’s growth 
             and carve your path in its thriving sector.
             </p>
+          <Link
+            to="/enquire-now"
+            className="text-black w-fit py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-[0_0_20px_4px_rgba(240,175,18,0.7)] hover:text-white"
+            style={{
+              background: "linear-gradient(96.18deg, #F0AF12 0%, #B2680A 100%)",
+            }}
+          >
+            Enquire Now
+          </Link>
             </div>
           </div>
         </div>
