@@ -62,7 +62,7 @@ const EventFeatures = () => {
       <div className="flex md:flex-row flex-col gap-4 mt-12">
         {/* Column 1 */}
         <div
-          className="flex flex-col gap-4 w-1/2 will-change-transform"
+          className="flex flex-col gap-4 md:w-1/2 w-full will-change-transform"
           ref={col1Ref}
         >
           <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
@@ -89,7 +89,7 @@ const EventFeatures = () => {
 
         {/* Column 2 */}
         <div
-          className="flex flex-col gap-4 w-1/2 mt-20 will-change-transform"
+          className="flex flex-col gap-4 md:w-1/2 w-full mt-20 will-change-transform"
           ref={col2Ref}
         >
           <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
